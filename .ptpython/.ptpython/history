@@ -1,0 +1,5083 @@
+
+# 2018-09-02 19:03:47.515344
++from pytube import YouTube
+
+# 2018-09-02 19:05:37.510964
++YouTube('https://www.youtube.com/watch?v=wgztAU7p-WM').streams.first().download()
+
+# 2018-09-25 18:45:41.377178
++import markdown_to_json
+
+# 2018-09-25 18:45:59.424634
++help(markdown_to_json)
+
+# 2018-09-25 18:46:11.977188
++markdown_to_json.absolute_import
+
+# 2018-09-25 18:54:49.789946
++from markdown_to_json import markdown_to_json
+
+# 2018-09-25 18:54:56.076381
++from markdown_to_json import markdown_to_json as md
+
+# 2018-09-25 18:59:41.542912
++md_path = '/Users/mickerus/Documents/book/index.md'
+
+# 2018-09-25 19:00:49.544460
++md_file = open(md_path, 'r')
+
+# 2018-09-25 19:01:04.005539
++from markdown_to_json.vendor.docopt import docopt
++from markdown_to_json.vendor import CommonMark
+
+# 2018-09-25 19:01:29.167976
++parsed = CommonMark.DocParser().parse(md_file.read())
+
+# 2018-09-25 19:01:31.522555
++parsed
+
+# 2018-09-25 19:01:51.236174
++CMarkASTNester()
+
+# 2018-09-25 19:01:58.072952
++from markdown_to_json.markdown_to_json import Renderer, CMarkASTNester
+
+# 2018-09-25 19:02:11.461783
++nester = CMarkASTNester()
+
+# 2018-09-25 19:02:30.913865
++nested = nester.nest(parsed)
+
+# 2018-09-25 19:02:32.864832
++nested
+
+# 2018-09-25 19:02:41.674626
++dict(nested)
+
+# 2018-09-25 19:03:40.955304
++help(CommonMark)
+
+# 2018-09-25 19:03:49.787290
++CommonMark.ASTtoJSON(parsed)
+
+# 2018-09-25 19:04:14.680091
++help(CommonMark.ASTtoJSON)
+
+# 2018-09-25 19:04:40.621940
++nested
+
+# 2018-09-25 19:04:49.446100
++nested.__dict__
+
+# 2018-09-25 19:04:51.590571
++nested.__dict__()
+
+# 2018-09-25 19:04:55.182629
++nested
+
+# 2018-09-25 19:05:01.578148
++nested.keys()
+
+# 2018-09-25 19:05:10.224422
++list(nested.keys())
+
+# 2018-09-25 19:05:15.562586
++list(nested.keys())[0]
+
+# 2018-09-25 19:05:23.325333
++type(list(nested.keys())[0])
+
+# 2018-09-25 19:05:34.949842
++list(nested.keys())[0]
+
+# 2018-09-25 19:05:43.459677
++dir(list(nested.keys())[0])
+
+# 2018-09-25 19:05:57.876064
++ast
+
+# 2018-09-25 19:06:01.221024
++parsed
+
+# 2018-09-25 19:06:17.982755
++parsed.__dict__
+
+# 2018-09-25 19:06:30.822112
++parsed.__dict__['children']
+
+# 2018-09-25 19:06:35.144215
++parsed.__dict__['children'][0]
+
+# 2018-09-25 19:06:41.437058
++parsed.__dict__['children'][0].__dict__
+
+# 2018-09-25 19:07:25.411183
++help(Renderer)
+
+# 2018-09-25 19:07:29.559038
++nested
+
+# 2018-09-25 19:07:38.269611
++Renderer().stringify_dict(nested)
+
+# 2018-09-25 19:07:49.642657
++dict(Renderer().stringify_dict(nested))
+
+# 2018-09-25 19:08:01.385172
++Renderer().stringify_dict(nested)
+
+# 2018-09-25 19:08:07.255182
++type(Renderer().stringify_dict(nested))
+
+# 2018-09-25 19:08:34.023292
++nested_dict = Renderer().stringify_dict(nested)
+
+# 2018-09-25 19:08:56.535773
++str(type(Renderer().stringify_dict(nested)))
+
+# 2018-09-25 19:09:09.134199
++type(Renderer().stringify_dict(nested))
+
+# 2018-09-25 19:09:29.214261
++str(Renderer().stringify_dict(nested))
+
+# 2018-09-25 19:10:29.879158
++type(Renderer().stringify_dict(nested)) == collections.OrderedDict
+
+# 2018-09-25 19:10:38.126318
++from collections import OrderedDict
+
+# 2018-09-25 19:10:42.969867
++type(Renderer().stringify_dict(nested)) == OrderedDict
+
+# 2018-09-25 19:10:59.600370
++nested_dict
+
+# 2018-09-25 19:11:05.969982
++type(nested_dict)
+
+# 2018-09-25 19:11:16.192630
++od = nested_dict
+
+# 2018-09-25 19:11:18.807555
++od.items()
+
+# 2018-09-25 19:13:05.170331
++def od_to_d(od):
++    for i in od:
++        if type(i) == OrderedDict:
++            i = dict(i.items())
++            return od_to_d(i)
+
+# 2018-09-25 19:13:12.089315
++od_to_d(od)
+
+# 2018-09-25 19:13:16.516891
++print(od_to_d(od))
+
+# 2018-09-25 19:13:19.082014
++od
+
+# 2018-09-25 19:13:55.425665
++def od_to_d(od):
++    for i in od.items():
++        if type(i) == OrderedDict:
++            i = dict(i.items())
++            return od_to_d(i)
+
+# 2018-09-25 19:13:59.289151
++print(od_to_d(od))
+
+# 2018-09-25 19:14:36.335379
++def od_to_d(od):
++    for i in od.items():
++        if type(i) == OrderedDict:
++            i = dict(i.items())
++            od_to_d(i)
++    return od
+
+# 2018-09-25 19:14:39.712561
++print(od_to_d(od))
+
+# 2018-09-25 19:17:23.845120
++def od_to_d(od):
++    if type(od) == OrderedDict:
++        od = dict(od.items())
++        for i in od.items():
++                i = dict(i.items())
++                od_to_d(i)
++    return od
+
+# 2018-09-25 19:17:27.590179
++od.items()
+
+# 2018-09-25 19:17:34.888061
++od.keys()
+
+# 2018-09-25 19:17:40.136314
++od
+
+# 2018-09-25 19:17:49.953255
++dict(*od)
+
+# 2018-09-25 19:18:08.701035
++dic = {'o':'b'}
+
+# 2018-09-25 19:18:11.805432
++dic.items()
+
+# 2018-09-25 19:19:18.154226
++dict(dic.items())
+
+# 2018-09-25 19:21:28.776615
++def od_to_d(od):
++    if type(od) == OrderedDict:
++        od = dict(od.items())
++        for i in od.items():
++            i = od_to_d(i)
++    return od
+
+# 2018-09-25 19:22:10.657134
++dic.items()
+
+# 2018-09-25 19:22:13.279677
++dic.items()[0]
+
+# 2018-09-25 19:22:34.426728
++for i in dic.items():print(i)
+
+# 2018-09-25 19:24:24.031328
++def od_to_d(od):
++    if type(od) == OrderedDict:
++        od = dict(od.items())
++        for k, v in od.items():
++            k = od_to_d(v)
++    return od
+
+# 2018-09-25 19:24:31.759782
++print(od_to_d(od))
+
+# 2018-09-25 19:25:26.167460
++def od_to_d(od):
++    if type(od) == OrderedDict:
++        od = dict(od.items())
++        for k, v in od.items():
++            od[k] = od_to_d(v)
++    return od
+
+# 2018-09-25 19:25:30.306372
++print(od_to_d(od))
+
+# 2018-09-25 19:26:31.255297
++dic = od_to_d(od)
+
+# 2018-09-25 19:26:56.065704
++dict['The Rust Programming Language']
+
+# 2018-09-25 19:26:59.713689
++dic.keys()
+
+# 2018-09-25 19:27:18.520937
++dict['The Rust Programming Language']
+
+# 2018-09-25 19:27:24.606066
++dic['The Rust Programming Language']
+
+# 2018-09-25 19:27:41.401203
++dic['The Rust Programming Language']['First Edition']
+
+# 2018-09-25 19:28:13.071314
++dic['The Rust Programming Language']['2018 Edition']
+
+# 2018-09-25 19:28:29.785385
++print(dic['The Rust Programming Language']['2018 Edition'])
+
+# 2018-10-04 20:19:50.897616
++print("ggg\"ggg"
++)
+
+# 2018-10-04 20:20:19.031351
++print(["ggg\"ggg", "ffff\""])
+
+# 2018-10-06 17:16:30.891232
++"type `fn(&'a std::str::SplitWhitespace<'a>, &str, &mut bool) -> std::option::Option<std::vec::Vec<&'a str>>`" == "'type `fn(&'a std::str::SplitWhitespace<'a>, &str, &mut bool) -> std::option::Option<std::vec::Vec<&'a str>>`"
+
+# 2018-10-06 17:17:10.091547
++a = "fn(&'a std::str::SplitWhitespace<'a>, &str, &mut bool) -> std::option::Option<std::vec::Vec<&'a str>>"
+
+# 2018-10-06 17:17:26.555196
++b = "fn(&'a std::str::SplitWhitespace<'a>, &str, &mut bool) -> std::option::Option<std::vec::Vec<&'a str>>"
+
+# 2018-10-06 17:17:28.433377
++a == b
+
+# 2018-10-13 17:16:51.876210
++"### section"[2:]
+
+# 2018-10-13 17:17:00.111776
++"### section"[3:]
+
+# 2018-10-13 17:23:26.706535
++import os
+
+# 2018-10-13 17:26:18.295455
++os.listdir('/Users/mickerus/Documents/book/2018-edition/src')
+
+# 2018-10-13 17:27:20.615813
++ls
+
+# 2018-10-13 17:28:11.146822
++with open( '/Users/mickerus/Documents/book/2018-edition/src/ch16-03-shared-state.md') as file:
++    lines= file.readlines(file)
+
+# 2018-10-13 17:29:56.580415
++with open('/Users/mickerus/Documents/book/2018-edition/src/ch16-03-shared-state.md') as file:
++    lines= file.readlines()
+
+# 2018-10-13 17:30:05.546591
++for l in lines:
++    print(l)
+
+# 2018-10-13 17:45:09.694042
++file
+
+# 2018-10-13 17:45:18.997229
++with open('/Users/mickerus/Documents/book/2018-edition/src/ch16-03-shared-state.md') as file:
++    lines= file.read()
+
+# 2018-10-13 17:45:21.773680
++lines
+
+# 2018-10-13 17:56:49.485140
++"aabbbaaa".index('aa')
+
+# 2018-10-13 17:57:09.651597
++import re
+
+# 2018-10-13 17:57:18.935588
++re.compile
+
+# 2018-10-13 17:58:02.800505
++re.compile('“(*)”')
+
+# 2018-10-13 17:58:16.513322
++re.compile('aaa')
+
+# 2018-10-13 17:58:23.684440
++re.compile('aa(*)a')
+
+# 2018-10-13 17:58:36.671578
++re.compile('“(.+)”')
+
+# 2018-10-13 17:58:43.529058
++p = """You declare constants using the const keyword instead of the let keyword, and the type of the value must be annotated. We’re about to cover types and type annotations in the next section, “Data Types,” so don’t worry about the details right now. Just know that you must always annotate the type."""
+
+# 2018-10-13 17:58:57.460444
++section_mention = re.compile('“(.+)”')
+
+# 2018-10-13 17:59:15.617014
++re.search(section_mention, p)
+
+# 2018-10-13 17:59:21.879825
++result = re.search(section_mention, p)
+
+# 2018-10-13 17:59:29.836061
++result.group(o)
+
+# 2018-10-13 17:59:31.708804
++result.group(0)
+
+# 2018-10-13 17:59:47.933727
++result.group(1)
+
+# 2018-10-13 17:59:50.243185
++result.group(2)
+
+# 2018-10-13 18:00:23.798288
++result.group(o)
+
+# 2018-10-13 18:00:25.499688
++result.group(2)
+
+# 2018-10-13 18:00:29.117617
++result.group(1)
+
+# 2018-10-13 18:00:43.936461
++for group in result[1:]:
++    print(group)
+
+# 2018-10-13 18:00:55.861858
++result[1:]
+
+# 2018-10-13 18:00:57.739794
++result[1]
+
+# 2018-10-13 18:01:10.528502
++for group in result:
++    print(group)
+
+# 2018-10-13 18:01:31.148480
++for group in result.group[1:]:
++    print(group)
+
+# 2018-10-13 18:01:38.959544
++result.group
+
+# 2018-10-13 18:01:41.748484
++list(result.group)
+
+# 2018-10-13 18:11:35.627876
++from collections import defaultdict
+
+# 2018-10-13 18:11:42.167495
++d = defaultdict(list)
+
+# 2018-10-13 18:11:50.503632
++d['file'].append('ooo')
+
+# 2018-10-13 18:11:51.537439
++d
+
+# 2018-10-13 18:11:58.739563
++d.keys()
+
+# 2018-10-13 18:27:07.404569
++'ch04-02-references-and-borrowing'[5:7]
+
+# 2018-10-13 18:28:11.511791
++jobs
+
+# 2018-10-13 18:36:35.998246
++re
+
+# 2018-10-13 18:37:01.445374
++p 
+
+# 2018-10-13 18:37:58.307557
++pattern
+
+# 2018-10-13 18:37:59.574194
++p
+
+# 2018-10-13 18:41:34.822396
++with open('/Users/mickerus/Documents/book/2018-edition/src/ch03-03-how-functions-work.md') as file:
++    doco = file.read()
+
+# 2018-10-13 18:41:35.939783
++doco
+
+# 2018-10-13 18:41:54.623751
++re
+
+# 2018-10-13 18:42:00.633711
++section_pattern = re.compile('[?“.+”]?')
+
+# 2018-10-13 18:42:19.982194
++results = re.search(section_pattern, doco)
+
+# 2018-10-13 18:42:22.051146
++results
+
+# 2018-10-13 18:43:07.242983
++section_pattern = re.compile('\[?“.+”\]?')
+
+# 2018-10-13 18:43:09.246598
++results = re.search(section_pattern, doco)
+
+# 2018-10-13 18:43:10.635750
++results
+
+# 2018-10-13 18:43:47.647276
++for i in results:
++    print(i)
+
+# 2018-10-13 18:44:00.246086
++results = re.search(section_pattern, doco)
+
+# 2018-10-13 18:44:01.587799
++results
+
+# 2018-10-13 18:44:05.425178
++dir(results)
+
+# 2018-10-13 19:05:55.784132
++lookhead_behind=re.compile(r'(?<=\<).+(?!\>)')
+
+# 2018-10-13 19:06:25.959094
++string='<oooooo>oooo'
+
+# 2018-10-13 19:06:34.023277
++re.match(lookhead_behind, string)
+
+# 2018-10-13 19:06:39.130818
++rem = re.match(lookhead_behind, string)
+
+# 2018-10-13 19:06:40.052845
++rem
+
+# 2018-10-13 19:06:45.528251
++dir(rem)
+
+# 2018-10-13 19:07:22.238899
++lookhead_behind=re.compile(r'(?<=\<).+[^\<\>](?!\>)')
+
+# 2018-10-13 19:07:24.377243
++rem = re.match(lookhead_behind, string)
+
+# 2018-10-13 19:07:26.480409
++rem
+
+# 2018-10-13 19:07:53.138287
++string = ('ooo<ooo')
+
+# 2018-10-13 19:08:05.191051
++lookhead_behind=re.compile(r'(?<=\<).+')
+
+# 2018-10-13 19:08:10.462676
++rem = re.match(lookhead_behind, string)
+
+# 2018-10-13 19:08:11.273139
++rem
+
+# 2018-10-13 19:08:20.573157
++rem = re.search(lookhead_behind, string)
+
+# 2018-10-13 19:08:21.900111
++rem
+
+# 2018-10-13 19:08:31.286257
++lookhead_behind=re.compile(r'(?<=\<).+[^\<\>](?!\>)')
+
+# 2018-10-13 19:08:35.017425
++rem = re.search(lookhead_behind, string)
+
+# 2018-10-13 19:08:35.799112
++rem
+
+# 2018-10-13 19:08:43.946234
++string='<oooooo>oooo'
+
+# 2018-10-13 19:08:46.506520
++rem = re.search(lookhead_behind, string)
+
+# 2018-10-13 19:08:47.243830
++rem
+
+# 2018-10-13 19:09:48.378692
++lookhead_behind=re.compile(r'(?<=\[)[\w\s]+[^\[\]](?!\])')
+
+# 2018-10-13 19:09:51.267960
++p
+
+# 2018-10-13 19:10:14.612615
++string = '[sadfasdfsa]asdfasf'
+
+# 2018-10-13 19:10:16.352713
++rem = re.search(lookhead_behind, string)
+
+# 2018-10-13 19:10:17.136929
++rem
+
+# 2018-10-13 19:11:08.362069
++lookhead_behind=re.compile(r'(?!=\[)[\w\s]+[^\[\]](?!\])')
+
+# 2018-10-13 19:11:10.417634
++rem = re.search(lookhead_behind, string)
+
+# 2018-10-13 19:11:11.230837
++rem
+
+# 2018-10-13 19:11:38.276418
++rem[:]
+
+# 2018-10-13 19:11:42.738076
++rem.group
+
+# 2018-10-13 19:11:45.655765
++rem.group[:]
+
+# 2018-10-13 19:11:49.638926
++rem.groups
+
+# 2018-10-13 19:11:54.813578
++rem.groups[:]
+
+# 2018-10-13 19:12:01.234703
++list(rem.groups)
+
+# 2018-10-13 19:16:08.538480
++lookhead_behind=re.compile(r'(?<!\[)[\w\s]+[^\[\]](?!\])')
+
+# 2018-10-13 19:16:13.156627
++rem = re.search(lookhead_behind, string)
+
+# 2018-10-13 19:16:14.140256
++rem
+
+# 2018-10-13 19:16:17.898926
++string
+
+# 2018-10-13 19:18:36.254470
++section_pattern = re.compile(r'(?<!\[)?“[\w\s]+”(?!\])')
+
+# 2018-10-13 19:18:38.836223
++p
+
+# 2018-10-13 19:18:54.551254
++rem = re.search(section_pattern, p)
+
+# 2018-10-13 19:18:55.297720
++rem
+
+# 2018-10-13 19:19:18.434575
++section_pattern = re.compile(r'(?<!\[)?“[\w\s,.]+”(?!\])')
+
+# 2018-10-13 19:19:24.980846
++section_pattern = re.compile(r'(?<!\[)?“[\w\s,\.]+”(?!\])')
+
+# 2018-10-13 19:19:27.507439
++rem = re.search(section_pattern, p)
+
+# 2018-10-13 19:19:28.279433
++rem
+
+# 2018-10-13 19:19:49.482190
++rem = re.search(section_pattern, doc)
+
+# 2018-10-13 19:19:51.700547
++rem = re.search(section_pattern, doco)
+
+# 2018-10-13 19:19:53.089400
++rem
+
+# 2018-10-13 19:19:59.645700
++rem.groups()
+
+# 2018-10-13 19:20:01.518993
++rem.groups
+
+# 2018-10-13 19:20:06.028869
++rem.groups.next()
+
+# 2018-10-13 19:20:10.289745
++rem.group(0)
+
+# 2018-10-13 19:20:11.769514
++rem.group(1)
+
+# 2018-10-13 19:20:49.912658
++re.search('“', doco)
+
+# 2018-10-13 19:20:55.282641
++re.search('“', doco).groups()
+
+# 2018-10-13 19:20:56.742189
++re.search('“', doco).groups
+
+# 2018-10-13 19:21:00.962117
++re.search('“', doco).groups.next()
+
+# 2018-10-13 19:21:09.563629
++findo = re.search('“', doco).groups
+
+# 2018-10-13 19:21:11.722573
++find
+
+# 2018-10-13 19:21:13.707155
++findo
+
+# 2018-10-13 19:21:18.042419
++dir(findo)
+
+# 2018-10-13 19:21:37.729021
++findo = re.search('T', doco).groups
+
+# 2018-10-13 19:21:39.901412
++findo
+
+# 2018-10-13 19:21:48.800253
++for i in findo: print(i)
+
+# 2018-10-13 19:23:18.290245
++findo = re.findall('T', doco).groups
+
+# 2018-10-13 19:23:23.196490
++findo = re.findall('T', doco)
+
+# 2018-10-13 19:23:24.576955
++findo
+
+# 2018-10-13 19:32:41.275868
++zip(*[(0, 'f'), (1, 'e')])[0]
+
+# 2018-10-13 19:32:48.536446
++zip([(0, 'f'), (1, 'e')])
+
+# 2018-10-13 19:33:04.385248
++list(zip(*[(0, 'f'), (1, 'e')]))[0]
+
+# 2018-10-13 19:35:18.920763
++'aaabsdfo'.strip('fb')
+
+# 2018-10-13 19:35:24.063320
++'aaabsdfo'.filter('fb')
+
+# 2018-10-13 19:35:43.417279
++filter('fb', 'aaabsdfo')
+
+# 2018-10-13 19:35:47.311138
++filter('fb', 'aaabsdfo').next()
+
+# 2018-10-13 19:37:09.887762
++'aaabsdfo'.replace('fb')
+
+# 2018-10-13 19:37:19.834607
++'aaabsdfo'.replace('fb', '')
+
+# 2018-10-13 19:37:25.443637
++'aaabsdfo'.replace('f', '')
+
+# 2018-10-13 19:37:31.546496
++'aaabsdfo'.replace('f', 'b', '')
+
+# 2018-10-13 19:38:08.965124
++'aaabsdfo'.translate(None, 'fb')
+
+# 2018-10-13 19:38:41.852067
++'::2012-05-14 18:10:20.856000::'.translate(None, ' -.:')
+
+# 2018-10-13 19:39:53.160896
++'aaabsdfo'.strip(['f', 'b'])
+
+# 2018-10-13 19:40:15.252919
++'aaabsdfo'.strip('fb')
+
+# 2018-10-13 19:40:18.992086
++'aaabsdfo'.strip('bf')
+
+# 2018-10-13 19:40:28.023937
++'www.example.com'.strip('cmowz.')
+
+# 2018-10-13 19:48:22.446586
++'“sadfasf”'.strip()
+
+# 2018-10-13 19:48:31.241234
++'“sadfasf”'.strip('“”')
+
+# 2018-10-13 19:49:07.451623
++'T'.isupper()
+
+# 2018-10-13 19:49:10.168161
++'%'.isupper()
+
+# 2018-10-13 20:22:36.962381
++d = {'o': ['a', 'c']}
+
+# 2018-10-13 20:22:40.232937
++d[0]
+
+# 2018-10-13 20:22:43.933963
++d['o']
+
+# 2018-10-13 20:22:47.433909
++d['o'].key()
+
+# 2018-10-13 20:23:15.824464
++d.get('o')
+
+# 2018-10-13 20:23:39.555281
++'o' in d
+
+# 2018-10-13 21:16:00.151759
++'Using `Result<T, E>` in tests'.split
+
+# 2018-10-13 21:16:02.316355
++'Using `Result<T, E>` in tests'.split()
+
+# 2018-10-13 21:17:18.401572
++'-'.join(string for string in ('Using `Result<T, E>` in tests'.split()))
+
+# 2018-10-13 21:20:58.116571
++'Using `Result<T, E>` in tests'.split
+
+# 2018-10-13 21:22:18.590748
++re.sub('[\W_]+', '-'.join('Using `Result<T, E>` in tests').split())
+
+# 2018-10-13 21:22:25.854156
++re.sub('[\W_]+', '-'.join('Using `Result<T, E>` in tests'.split()))
+
+# 2018-10-13 21:22:40.521818
++re.sub('[\W_]+', '', '-'.join('Using `Result<T, E>` in tests'.split()))
+
+# 2018-10-13 21:23:26.106930
++re.sub('[\W_(^-)]+', '', '-'.join('Using `Result<T, E>` in tests'.split()))
+
+# 2018-10-13 21:23:38.455817
++re.sub('[\W_(^\-)]+', '', '-'.join('Using `Result<T, E>` in tests'.split()))
+
+# 2018-10-13 21:24:01.823545
++re.sub('[^\w]+', '', '-'.join('Using `Result<T, E>` in tests'.split()))
+
+# 2018-10-13 21:24:05.095053
++re.sub('[^\w-]+', '', '-'.join('Using `Result<T, E>` in tests'.split()))
+
+# 2018-10-13 21:24:18.285847
++re.sub('[^\w-]+', '', '-'.join('Using `Result<T, E>` in tests'.split()).lower())
+
+# 2018-10-13 21:25:44.412820
++def format_anchor(line):
++   return re.sub('[^\w-]+', '', '-'.join(line.split()).lower())
+
+# 2018-10-13 21:25:52.838897
++format_anchor('Preventing Reference Cycles: Turning an Rc<T> into a Weak<T>')
+
+# 2018-10-13 21:27:34.093873
++format_anchor('Preventing Reference Cycles: Turning an Rc<T> into a Weak<T>') == (
++        'preventing-reference-cycles-turning-an-rct-into-a-weakt')
+
+# 2018-10-13 21:29:02.774073
++format_anchor('Specify multiple traits with +')
+
+# 2018-10-13 21:30:56.965600
++d = {}
+
+# 2018-10-13 21:31:29.075857
++d.append({'hello': 'hobo'})
+
+# 2018-10-13 21:31:37.679778
++d.add({'hello': 'hobo'})
+
+# 2018-10-13 21:31:47.315074
++dir(d)
+
+# 2018-10-13 21:31:56.802439
++d.update({'hello': 'hobo'})
+
+# 2018-10-13 21:31:57.561067
++d
+
+# 2018-10-13 21:32:07.231116
++d.update({'sf': 'aa'})
+
+# 2018-10-13 21:32:07.658319
++d
+
+# 2018-10-13 21:35:49.678612
++test_format =('### Using `Result<T, E>` in tests', {}, 'ch11-01-writing-tests')
+
+# 2018-10-13 21:37:25.897148
++dict('d', {'ooo'})
+
+# 2018-10-13 21:38:26.462838
++dict('d', ('o', 'ooo'))
+
+# 2018-10-13 21:38:30.867415
++dict('d', dcit('o', 'ooo'))
+
+# 2018-10-13 21:38:42.894069
++dict('d', dict('o', 'ooo'))
+
+# 2018-10-13 21:39:04.226704
++dict('d', ['oo'])
+
+# 2018-10-13 21:39:12.055577
++dict(('d', ['oo']))
+
+# 2018-10-13 21:39:17.955218
++dict(('d', 'oo'))
+
+# 2018-10-13 21:43:39.087749
++def create_entry(line, num, fname):
++    key = str(line.rstrip('\n')[num:])
++    return { key: {
++        'filename': fname,
++        'type': 'anchor',
++        'anchor-id': format_anchor(line)}
++        }
+
+# 2018-10-13 21:44:16.946685
++test_format =('### Using `Result<T, E>` in tests', 4, 'ch11-01-writing-tests')
+
+# 2018-10-13 21:44:26.773730
++create_entry(*test_format)
+
+# 2018-10-13 21:45:03.317098
++def create_entry(line, num, fname):
++    key = str(line.rstrip('\n')[num:])
++    print(key)
++    return { key: {
++        'filename': fname,
++        'type': 'anchor',
++        'anchor-id': format_anchor(line)}
++        }
+
+# 2018-10-13 21:45:08.248821
++create_entry(*test_format)
+
+# 2018-10-13 21:45:23.940129
++def format_anchor(line):
++    # it is necessary to strip nonalpha chars after the hypens to mirror present mdbook
++    # functionality when a header string ends with a spaced separated nonalpha, see 
++    # second entry in assertion below
++   return re.sub('[^\w-]+', '', '-'.join(line.split()).lower())
+
+# 2018-10-13 21:45:28.335497
++create_entry(*test_format)
+
+# 2018-10-13 21:46:00.258038
++format_anchor('Using Result<T, E> in tests')
+
+# 2018-10-13 21:46:40.504719
++ustr= '### Using `Result<T, E>` in tests\n'
+
+# 2018-10-13 21:46:47.917735
++format_anchor(ustr)
+
+# 2018-10-13 21:47:26.299321
++def create_entry(line, num, fname):
++    key = str(line.rstrip('\n')[num:])
++    print(key)
++    return { key: {
++        'filename': fname,
++        'type': 'anchor',
++        'anchor-id': format_anchor(key)}
++        }
+
+# 2018-10-13 21:47:29.873682
++format_anchor(ustr)
+
+# 2018-10-13 21:47:38.433477
++create_entry(*test_format)
+
+# 2018-10-13 21:51:25.403106
++test_format
+
+# 2018-10-13 22:02:35.306136
++True^True
+
+# 2018-10-13 22:02:40.357035
++False^True
+
+# 2018-10-13 22:07:13.135048
++dir(dict)
+
+# 2018-10-13 22:22:29.815230
++'##  f'.lstrip('# ')
+
+# 2018-10-13 22:22:36.251735
++'#####    f'.lstrip('# ')
+
+# 2018-10-13 22:24:23.970821
++re.compile(r'#{1,2,3}\s.+')
+
+# 2018-10-13 22:25:11.990257
++header - re.compile(r'#{1,2,3}\s.+')
+
+# 2018-10-13 22:25:16.417818
++header = re.compile(r'#{1,2,3}\s.+')
+
+# 2018-10-13 22:25:39.692846
++re.match(header, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:25:42.393677
++d = re.match(header, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:25:42.799024
++d
+
+# 2018-10-13 22:26:04.256287
++header = re.compile(r'\#{1,2,3}\s.+')
+
+# 2018-10-13 22:26:07.085532
++d = re.match(header, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:26:07.935968
++d
+
+# 2018-10-13 22:26:11.722618
++dir(d)
+
+# 2018-10-13 22:27:03.806628
++header = re.compile(r'\#{1,2,3}\s.+')
+
+# 2018-10-13 22:27:31.197308
++d = re.search(header, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:27:32.066232
++d
+
+# 2018-10-13 22:27:43.280765
++header = re.compile(r'#{1,2,3}\s.+')
+
+# 2018-10-13 22:27:45.348952
++d = re.search(header, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:27:45.916213
++d
+
+# 2018-10-13 22:28:14.361682
++header = re.compile(r'#{1,2,3} .+')
+
+# 2018-10-13 22:28:37.197907
++d = re.search(header, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:28:37.573372
++d
+
+# 2018-10-13 22:28:41.312269
++dir(d)
+
+# 2018-10-13 22:28:46.363935
++type(d)
+
+# 2018-10-13 22:29:10.482527
++header = re.compile(r'$#{1,2,3} .+')
+
+# 2018-10-13 22:29:15.017047
++header = re.compile('$#{1,2,3} .+')
+
+# 2018-10-13 22:29:17.722730
++d = re.search(header, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:29:18.232109
++d
+
+# 2018-10-13 22:30:20.273380
++simple_h = re.compile(r'# .+')
+
+# 2018-10-13 22:30:31.120669
++re.search(simple_h, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:30:41.989837
++simple_h = re.compile(r'#{1,2,3} .+')
+
+# 2018-10-13 22:30:43.463627
++re.search(simple_h, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:31:09.342272
++simple_h = re.compile('#{1,2,3} .+')
+
+# 2018-10-13 22:31:11.323049
++re.search(simple_h, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:31:36.390433
++simple_h = re.compile('#{3} .+')
+
+# 2018-10-13 22:31:37.754921
++re.search(simple_h, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:31:44.933639
++simple_h = re.compile('#{1,3} .+')
+
+# 2018-10-13 22:31:46.731403
++re.search(simple_h, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:31:50.189943
++simple_h = re.compile('#{1,2,3} .+')
+
+# 2018-10-13 22:31:51.775068
++re.search(simple_h, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:32:04.213994
++simple_h = re.compile('#{1,3} .+')
+
+# 2018-10-13 22:32:05.254751
++re.search(simple_h, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:32:14.028773
++header = re.compile('$#{1,3} .+')
+
+# 2018-10-13 22:32:28.175369
++re.search(header, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:32:56.907050
++header = re.compile('^#{1,3} .+\n?$')
+
+# 2018-10-13 22:32:59.585489
++re.search(header, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:33:44.834028
++re.match(header, '### Using `Result<T, E>` in tests')
+
+# 2018-10-13 22:33:58.844116
++re.match(header, '### Using `Result<T, E>` in tests') is True
+
+# 2018-10-13 22:34:09.963891
++if re.match(header, '### Using `Result<T, E>` in tests'):
++    print('whoo')
+
+# 2018-10-13 22:50:28.771845
++'a'.islower()
+
+# 2018-10-13 22:55:37.101469
++def fn(p, *args): print(args)
+
+# 2018-10-13 22:55:47.719195
++fn('o', print_d=True)
+
+# 2018-10-13 22:56:10.419240
++def fn(p, **kargs): print(**kwargs)
+
+# 2018-10-13 22:56:11.563128
++fn('o', print_d=True)
+
+# 2018-10-13 22:56:17.192012
++def fn(p, **kwargs): print(**kwargs)
+
+# 2018-10-13 22:56:18.329603
++fn('o', print_d=True)
+
+# 2018-10-13 22:56:49.897165
++def fn(p, **kwargs): print(kwargs)
+
+# 2018-10-13 22:56:51.032588
++fn('o', print_d=True)
+
+# 2018-10-13 23:01:06.127700
++def fn(p, **kwargs):
++    if print_d:
++        print('d')
+
+# 2018-10-13 23:01:11.204645
++fn('o', print_d=True)
+
+# 2018-10-13 23:02:21.496942
++def fn(p, **kwargs):
++    if kwargs.get('print_d'):
++        print('d')
+
+# 2018-10-13 23:02:23.332104
++fn('o', print_d=True)
+
+# 2018-10-13 23:02:28.804517
++fn('o', print_d=False)
+
+# 2018-10-13 23:18:12.308794
++dir(True)
+
+# 2018-10-13 23:18:48.476570
++True.to_bytes
+
+# 2018-10-13 23:18:51.333234
++True.to_bytes()
+
+# 2018-10-13 23:45:49.597066
++ml_page ="""
++sadfsafsf
++asdfasfd
++"""
+
+# 2018-10-13 23:46:09.423010
++dir(ml_page)
+
+# 2018-10-13 23:46:58.184531
++['link-a', 'link-b']
+
+# 2018-10-13 23:47:01.838059
++links = ['link-a', 'link-b']
+
+# 2018-10-13 23:47:15.298103
++ml_page + '\n'
+
+# 2018-10-13 23:47:20.749195
++ml_page
+
+# 2018-10-13 23:48:03.285921
++print(ml_page)
+
+# 2018-10-13 23:48:14.651254
++print(ml_page + '\nooo')
+
+# 2018-10-13 23:48:36.543575
++print(ml_page + '\n'+'\n'.join(links))
+
+# 2018-10-13 23:49:52.193975
++ml_page
+
+# 2018-10-13 23:50:17.038469
++ml_page ="""
++sadfsafsf
++asdfasfd"""
+
+# 2018-10-13 23:50:23.019312
++ml_page
+
+# 2018-10-13 23:50:27.308371
++print(ml_page + '\n'+'\n'.join(links))
+
+# 2018-10-14 00:13:17.601598
++print('contains the `{}` placeholder')
+
+# 2018-10-14 00:13:57.650260
++print(*('faygo'))
+
+# 2018-10-14 00:20:56.752577
++insert_in = """You can also add a custom message to be printed with the failure message as
++optional arguments to the `assert!`, `assert_eq!`, and `assert_ne!` macros. Any
++arguments specified after the one required argument to `assert!` or the two
++required arguments to `assert_eq!` and `assert_ne!` are passed along to the
++`format!` macro (discussed in Chapter 8 in the “Concatenation with the `+`
++Operator or the `format!` Macro” section), so you can pass a format string that
++contains `{}` placeholders and values to go in those placeholders. Custom
++messages are useful to document what an assertion means; when a test fails,
++you’ll have a better idea of what the problem is with the code."""
+
+# 2018-10-14 00:21:23.951757
++re_section = re.compile(r'(?<!\[)?“.+”(?!\])')
+
+# 2018-10-14 00:21:39.418538
++re.match(re_section, insert_in)
+
+# 2018-10-14 00:22:30.985232
++re.match(re_section, insert_in, re.MULTILINE)
+
+# 2018-10-14 00:23:01.717328
++re_section = re.compile(r'(?<!\[)?“.+\n?”(?!\])')
+
+# 2018-10-14 00:23:08.592261
++re_section = re.compile(r'(?<!\[)?“.+\n?.+”(?!\])')
+
+# 2018-10-14 00:23:23.496529
++re_section = re.compile(r'(?<!\[)?“[.\n]+.+”(?!\])')
+
+# 2018-10-14 00:23:27.020599
++re.match(re_section, insert_in, re.MULTILINE)
+
+# 2018-10-14 00:23:33.353305
++re.match(re_section, insert_in)
+
+# 2018-10-14 00:24:16.380787
++re_section = re.compile(r'(?<!\[)?“[.\n]+')
+
+# 2018-10-14 00:24:17.503105
++re.match(re_section, insert_in)
+
+# 2018-10-14 00:24:32.352978
++re_section = re.compile(r'“')
+
+# 2018-10-14 00:24:34.252974
++re.match(re_section, insert_in)
+
+# 2018-10-14 00:24:37.967662
++re_section = re.compile('“')
+
+# 2018-10-14 00:24:39.254999
++re.match(re_section, insert_in)
+
+# 2018-10-14 00:24:46.932447
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:25:12.666985
++re_section = re.compile(r'(?<!\[)?“[.\n]+')
+
+# 2018-10-14 00:25:14.896266
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:25:22.874311
++re_section = re.compile('(?<!\[)?“[.\n]+')
+
+# 2018-10-14 00:25:24.322983
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:25:29.174692
++re_section = re.compile('(?<!\[)?“')
+
+# 2018-10-14 00:25:30.349135
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:25:43.746559
++re_section = re.compile('(?<!\[)?“.+')
+
+# 2018-10-14 00:25:44.939395
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:26:40.587115
++re_section = re.compile('(?<!\[)?“[.\\n]+')
+
+# 2018-10-14 00:26:42.169024
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:27:00.325576
++re_section = re.compile('\n+')
+
+# 2018-10-14 00:27:01.818401
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:27:08.910708
++re_section = re.compile(r'\n+')
+
+# 2018-10-14 00:27:09.996957
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:27:14.787846
++re_section = re.compile('(?<!\[)?“[.\\n]+')
+
+# 2018-10-14 00:27:15.713373
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:28:28.141706
++re_section = re.compile('(?<!\[)?“[.\\n]+', re.MULTILINE)
+
+# 2018-10-14 00:28:29.367757
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:28:33.369135
++re_section = re.compile('(?<!\[)?“[.\n]+', re.MULTILINE)
+
+# 2018-10-14 00:28:34.242782
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:29:13.639447
++re_section = re.compile('^(?<!\[)?“[.\n]+', re.MULTILINE)
+
+# 2018-10-14 00:29:15.058741
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:29:33.652541
++re_section = re.compile('^(?<!\[)?“[.]+', re.MULTILINE)
+
+# 2018-10-14 00:29:34.506160
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:29:39.956290
++re_section = re.compile('^(?<!\[)?“.+', re.MULTILINE)
+
+# 2018-10-14 00:29:41.342458
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:29:47.782451
++result = re.search(re_section, insert_in)
+
+# 2018-10-14 00:29:49.061024
++result
+
+# 2018-10-14 00:29:52.767633
++type(result)
+
+# 2018-10-14 00:30:10.868173
++insert_in
+
+# 2018-10-14 00:30:59.703616
++re_section = re.compile('^(?<!\[)?“.', re.MULTILINE)
+
+# 2018-10-14 00:31:00.763270
++insert_in
+
+# 2018-10-14 00:31:05.295655
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:31:40.277314
++re_section = re.compile('(?<!\[)?“.', re.MULTILINE)
+
+# 2018-10-14 00:31:42.088907
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:31:48.494023
++re_section = re.compile('(?<!\[)?“.+', re.MULTILINE)
+
+# 2018-10-14 00:31:50.059872
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:32:01.257862
++re_section = re.compile('(?<!\[)?“[.\n]+', re.MULTILINE)
+
+# 2018-10-14 00:32:02.599782
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:32:53.770789
++re_section = re.compile('(?<!\[)?“.+\n?.+”', re.MULTILINE)
+
+# 2018-10-14 00:32:54.891339
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:33:35.824070
++re_section = re.compile('(?<!\[)?“.+\n?.+.”', re.MULTILINE)
+
+# 2018-10-14 00:33:37.676782
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:33:51.988297
++result = re.search(re_section, insert_in)
+
+# 2018-10-14 00:33:58.606673
++result.expand
+
+# 2018-10-14 00:34:00.331566
++result.expand()
+
+# 2018-10-14 00:34:04.776564
++result.group
+
+# 2018-10-14 00:34:08.546976
++result.group(0)
+
+# 2018-10-14 00:40:51.177301
++'“oyland”\n'.strip('“”')
+
+# 2018-10-14 00:40:53.374776
++'“oyland”\n'.strip('“” ')
+
+# 2018-10-14 00:40:59.506089
++'“oyland”\n'.strip('“”\n\s')
+
+# 2018-10-14 00:41:03.152745
++'“oyland”\n'.strip('“”\s')
+
+# 2018-10-14 00:41:15.342073
++'“oyland”\n'.strip('“” \t\r\n\v\f')
+
+# 2018-10-14 00:41:21.712350
++'“oyland”\n'.strip('“”\t\r\n\v\f')
+
+# 2018-10-14 00:41:27.300328
++'“oyl and”\n'.strip('“”\t\r\n\v\f')
+
+# 2018-10-14 00:50:36.616657
++re.search(re_section, insert_in)
+
+# 2018-10-14 00:50:41.871188
++re.search(re_section, insert_in).group(0)
+
+# 2018-10-14 00:50:58.721436
++dir(re.search(re_section, insert_in))
+
+# 2018-10-14 00:51:07.465639
++re.search(re_section, insert_in).string()
+
+# 2018-10-14 00:51:09.121100
++re.search(re_section, insert_in).string
+
+# 2018-10-14 00:51:23.319913
++found = re.search(re_section, insert_in)
+
+# 2018-10-14 00:51:25.676724
++dir(found)
+
+# 2018-10-14 00:51:32.752008
++found.group
+
+# 2018-10-14 00:51:34.376268
++found.group()
+
+# 2018-10-14 01:01:42.506613
++found.group().replace('\n', ' ')
+
+# 2018-10-14 01:10:21.327486
++found.group()
+
+# 2018-10-14 01:10:29.286373
++type(found.group(), str)
+
+# 2018-10-14 01:10:32.573238
++type(found.group())
+
+# 2018-10-14 01:10:59.086738
++re.search('a', 'aofa')
+
+# 2018-10-14 01:11:04.367745
++match = re.search('a', 'aofa')
+
+# 2018-10-14 01:11:11.620255
++for i in match:
++    print(i)
+
+# 2018-10-14 01:11:20.491455
++match.group()
+
+# 2018-10-14 01:11:31.411338
++re.search('a.', 'aofas')
+
+# 2018-10-14 01:11:43.132943
++match = re.search('a.', 'aofas')
+
+# 2018-10-14 01:11:47.798437
++match.group
+
+# 2018-10-14 01:11:50.993217
++list(match.group)
+
+# 2018-10-14 01:12:51.156853
++len(match.group)
+
+# 2018-10-14 01:12:54.712319
++match.group
+
+# 2018-10-14 01:12:56.424257
++match.group()
+
+# 2018-10-14 01:13:00.432445
++match.group()[0]
+
+# 2018-10-14 01:13:02.548341
++match.group()[1]
+
+# 2018-10-14 01:13:03.922677
++match.group()[2]
+
+# 2018-10-14 01:13:12.350785
++match.group(1)
+
+# 2018-10-14 01:13:14.248466
++match.group(0)
+
+# 2018-10-14 01:16:26.301221
++'''ass
++asss'''.lines()
+
+# 2018-10-14 01:16:50.644020
++'''ass
++asss'''.splitlines()
+
+# 2018-10-14 02:05:26.472312
++re_section = re.compile(r'(?<!\[)?“.+\n?.+\n?”(?!\])', re.MULTILINE)
+
+# 2018-10-14 02:06:23.333867
++insert_it
+
+# 2018-10-14 02:06:25.270959
++insert_in
+
+# 2018-10-14 02:06:41.786656
++re.sub(re_section, 'woohoo', insert_in)
+
+# 2018-10-14 02:06:51.625940
++insert_in
+
+# 2018-10-14 02:15:29.982525
++re_section
+
+# 2018-10-14 02:22:32.827432
++a = '012345'
+
+# 2018-10-14 02:22:38.080314
++a[0:1]
+
+# 2018-10-14 02:22:40.127237
++a[0:2]
+
+# 2018-10-14 02:22:43.502440
++a[0:2] = 'aoe'
+
+# 2018-10-14 03:20:23.488642
++help(str.replace)
+
+# 2018-10-14 03:22:44.117088
++match.group(0)
+
+# 2018-10-14 03:41:11.950719
++dir(dict)
+
+# 2018-10-19 20:46:04.719118
++os.scandir('.')
+
+# 2018-10-19 20:46:06.957330
++import os
+
+# 2018-10-19 20:46:08.188168
++os.scandir('.')
+
+# 2018-10-19 20:46:15.084813
++f = os.scandir('.').next()
+
+# 2018-10-19 20:46:15.616744
++f
+
+# 2018-10-19 20:46:31.598841
++f = os.scandir('/Users/mickerus').next()
+
+# 2018-10-19 20:46:38.784142
++f = next(os.scandir('/Users/mickerus'))
+
+# 2018-10-19 20:46:39.406818
++f
+
+# 2018-10-19 20:46:45.082822
++f.name
+
+# 2018-10-19 20:47:02.139257
++f.name.endswith('g')
+
+# 2018-10-19 20:47:34.473067
++f.is_file
+
+# 2018-10-19 20:47:40.788300
++f.is_file()
+
+# 2018-10-20 11:55:52.288470
++d = 0
+
+# 2018-10-20 11:55:57.373295
++if d: print(0)
+
+# 2018-10-20 11:56:00.118600
++d = 1
+
+# 2018-10-20 11:56:01.136267
++if d: print(0)
+
+# 2018-10-20 11:56:11.033793
++src = []
+
+# 2018-10-20 11:56:16.418443
++if src: print(0)
+
+# 2018-10-20 12:02:04.247683
++'Ab' in None
+
+# 2018-10-20 12:02:20.946604
++d = None
+
+# 2018-10-20 12:02:36.241139
++if d and 0 in d: print('oo')
+
+# 2018-10-20 12:10:01.121422
++import os
+
+# 2018-10-20 12:10:04.537397
++os.getcwd()
+
+# 2018-10-20 12:11:14.169692
++d
+
+# 2018-10-20 12:30:49.786784
++def parse_whitelist(in_doc):
++    if os.path.exists(in_doc) is False:
++        raise FileNotFoundError('Specified filepath does not exist')
++    with open(in_doc, 'r') as file:
++        whitelist_collection = []
++        for line in file.readlines():
++            if line.startswith('“') and line.endswith('”'):
++                whitelist_collection.append(line)
++        return whitelist_collection
++
+
+# 2018-10-20 12:31:21.193049
++parse_whitelist('/Users/mickerus/Documents/python/md_ref_generator/wlist.txt')
+
+# 2018-10-20 12:33:00.601635
++d = open('/Users/mickerus/Documents/python/md_ref_generator/wlist.txt').readlines
+
+# 2018-10-20 12:33:04.659285
++next(d)
+
+# 2018-10-20 12:33:08.414978
++d = open('/Users/mickerus/Documents/python/md_ref_generator/wlist.txt').readlines()
+
+# 2018-10-20 12:33:10.026662
++next(d)
+
+# 2018-10-20 12:33:16.410337
++d = open('/Users/mickerus/Documents/python/md_ref_generator/wlist.txt').readline()
+
+# 2018-10-20 12:33:17.666216
++next(d)
+
+# 2018-10-20 12:34:39.567870
++def parse_whitelist(in_doc):
++    if os.path.exists(in_doc) is False:
++        raise FileNotFoundError('Specified filepath does not exist')
++    with open(in_doc, 'r') as file:
++        whitelist_collection = []
++        for line in file.read():
++            if line.startswith('“') and line.endswith('”'):
++                whitelist_collection.append(line)
++        return whitelist_collection
+
+# 2018-10-20 12:34:49.192712
++parse_whitelist('/Users/mickerus/Documents/python/md_ref_generator/wlist.txt')
+
+# 2018-10-20 12:36:44.149500
++for i in open('/Users/mickerus/Documents/python/md_ref_generator/wlist.txt').readlines():
++    print(i)
+
+# 2018-10-20 12:38:05.803460
++for i in open('/Users/mickerus/Documents/python/md_ref_generator/wlist.txt').readlines():
++    if i.startswith('“'):
++        print(i)
+
+# 2018-10-20 12:38:46.468706
++for i in open('/Users/mickerus/Documents/python/md_ref_generator/wlist.txt').readlines():
++    if i.startswith('“') and i.endswith('”\n'):
++        print(i)
+
+# 2018-10-20 12:41:07.638099
++'ooo\n'.strip()
+
+# 2018-10-20 12:41:14.331493
++'ooo\nooo'.strip()
+
+# 2018-10-20 12:41:16.748410
++'ooo\nooo '.strip()
+
+# 2018-10-20 12:41:20.681832
++' ooo\nooo '.strip()
+
+# 2018-10-20 12:45:58.927454
++d = none
+
+# 2018-10-20 12:46:03.420320
++d = None
+
+# 2018-10-20 12:46:06.061494
++d.get('oo')
+
+# 2018-10-20 13:14:23.950726
++d
+
+# 2018-10-20 13:14:25.847447
++d = None
+
+# 2018-10-20 13:14:26.337207
++d
+
+# 2018-10-20 13:14:35.913887
++d = os.realpath(d) or 'a'
+
+# 2018-10-20 13:14:36.668704
++d
+
+# 2018-10-20 13:14:42.456231
++d = os.path.realpath(d) or 'a'
+
+# 2018-10-20 18:46:46.768103
++re.MULTILINE
+
+# 2018-10-20 19:41:53.722297
++help(re.MULTILINE)
+
+# 2018-10-20 23:03:38.879292
++17.5-9
+
+# 2018-10-20 23:03:51.677014
++8.5 * 4
+
+# 2018-10-21 11:24:53.184456
++from pytube import YouTube
+
+# 2018-10-21 11:24:55.629766
++os
+
+# 2018-10-21 11:25:16.013807
++os.chdir('/Users/mickerus/Documents')
+
+# 2018-10-21 11:25:41.478866
++YouTube('https://www.youtube.com/watch?v=xoTHrSpk1pA').streams.first().download()
+
+# 2018-10-21 11:27:28.957898
++YouTube('https://www.youtube.com/watch?v=xoTHrSpk1pA').streams.filter(file_extension='mp4').download()
+
+# 2018-10-21 11:27:57.892576
++YouTube('https://www.youtube.com/watch?v=xoTHrSpk1pA').streams.filter(file_extension='mp4').first.download()
+
+# 2018-10-21 11:28:07.434292
++YouTube('https://www.youtube.com/watch?v=xoTHrSpk1pA').streams.filter(file_extension='mp4').first().download()
+
+# 2018-10-21 13:50:43.277573
++200 -165
+
+# 2018-10-21 13:50:46.920314
++35/2
+
+# 2018-11-01 19:59:41.984892
++print('\u130b8')
+
+# 2018-11-01 19:59:47.727950
++print('\u130B8')
+
+# 2018-11-01 20:00:21.332236
++print('\u130ba')
+
+# 2018-11-01 20:00:54.987288
++print('\u130b8')
+
+# 2018-11-01 20:01:10.959938
++print('𓂸')
+
+# 2018-11-01 20:01:36.063206
++print('𓂸'.decode)
+
+# 2018-11-01 20:02:51.468540
++'𓂸'.encode('utf-8')
+
+# 2018-11-01 20:03:05.537099
++print(b'\xf0\x93\x82\xb8')
+
+# 2018-11-01 20:03:09.953748
++print('\xf0\x93\x82\xb8')
+
+# 2018-11-19 15:50:31.318887
++2 >> 1
+
+# 2018-11-19 15:50:33.330147
++2 >> 3
+
+# 2018-11-19 15:50:40.261147
++4 >> 2
+
+# 2018-11-19 15:50:45.013189
++4 >> 1
+
+# 2018-11-19 15:50:46.640886
++4 >> 3
+
+# 2018-11-19 15:50:47.880691
++4 >> 4
+
+# 2018-11-19 15:50:53.965976
++bin(4)
+
+# 2018-11-19 15:51:04.030648
++bin(4 >> 1)
+
+# 2018-11-19 15:51:14.291013
++bin(4 << 1)
+
+# 2018-11-19 15:51:18.689944
++4 << 1
+
+# 2018-11-19 15:51:28.843849
++4 << 2
+
+# 2018-11-19 15:51:31.714811
++3 << 2
+
+# 2018-11-19 15:51:42.353720
++3 << 1
+
+# 2018-11-19 15:51:44.672143
++3 << 3
+
+# 2018-11-19 15:54:50.664730
++9 + 16 + 25
+
+# 2018-11-19 15:54:57.447701
++50 // 3
+
+# 2018-11-19 15:55:07.362599
++50 / 3
+
+# 2018-11-19 15:55:55.337628
++1000 // 3
+
+# 2018-11-19 15:56:11.680829
++333 ** 0.5
+
+# 2018-11-19 15:56:28.819632
++332 + 333 + 334
+
+# 2018-11-19 15:56:38.332625
++333 + 332 + 334
+
+# 2018-11-19 15:56:46.075328
++333 + 334 + 335
+
+# 2018-11-19 15:57:41.041834
++1000 // 3
+
+# 2018-11-19 15:57:46.361599
++333 * 0.5
+
+# 2018-11-19 15:58:16.054346
++333 ** 0.5
+
+# 2018-11-19 15:58:29.251490
++17 ** 2 + 18 ** 2 + 19 ** 2
+
+# 2018-11-19 15:58:47.932210
++18 ** 2 + 19 ** 2 + 20 ** 2
+
+# 2018-11-19 15:59:33.139280
++print((18 ** 2 + 19 ** 2),  20 ** 2)
+
+# 2018-11-19 15:59:47.396914
++print((16 ** 2 + 15 ** 2),  17 ** 2)
+
+# 2018-11-19 16:02:03.344755
++print((17 ** 2 + 18 ** 2),  19 ** 2)
+
+# 2018-11-19 16:03:33.831735
++print("{}**2 + {}**2, {}**2".format(17, 18, 19))
+
+# 2018-11-19 16:04:02.257953
++range(3,17)
+
+# 2018-11-19 16:04:21.488855
++help(range)
+
+# 2018-11-19 16:04:25.790656
++range(17,3)
+
+# 2018-11-19 16:04:33.806986
++list(range(17,3))
+
+# 2018-11-19 16:04:37.919609
++list(range(17,1))
+
+# 2018-11-19 16:04:45.940432
++list(range(17,1, 19))
+
+# 2018-11-19 16:05:04.242226
++help(range)
+
+# 2018-11-19 16:05:12.964425
++list(range(17, 19))
+
+# 2018-11-19 16:06:56.684117
++range(17, 20)
+
+# 2018-11-19 16:06:59.512091
++list(range(17, 20))
+
+# 2018-11-19 16:07:43.769522
++help(str)
+
+# 2018-11-19 16:08:33.499883
++i=17
+
+# 2018-11-19 16:08:45.511525
++i=17; print("{}**2 + {}**2, {}**2".format(17, 18, 19))
+
+# 2018-11-19 16:08:58.151401
++i=17; print("{}**2 + {}**2, {}**2".format(i, i+1, i+2))
+
+# 2018-11-19 16:09:23.180413
++i=17; print("{} + {}, {}**2".format(i**2, (i+1)**2, (i+2)**2))
+
+# 2018-11-19 16:09:31.148131
++i=17; print("{} + {}, {}".format(i**2, (i+1)**2, (i+2)**2))
+
+# 2018-11-19 16:10:14.180441
++i=17; print("{} + {} = {}, {}".format(i**2, (i+1)**2, i**2 + (i+1)**2, (i+2)**2))
+
+# 2018-11-19 16:10:22.570294
++i=3; print("{} + {} = {}, {}".format(i**2, (i+1)**2, i**2 + (i+1)**2, (i+2)**2))
+
+# 2018-11-19 16:12:06.496957
++1000 // 2
+
+# 2018-11-19 16:12:25.828269
++1000 ** 2
+
+# 2018-11-19 16:12:32.255891
++(1000 ** 2)/2
+
+# 2018-11-19 16:12:41.225754
++((1000 ** 2)/2)** 0.5
+
+# 2018-11-19 16:36:53.909281
++1000**2
+
+# 2018-11-19 16:39:23.548527
++500000 ** 0.5
+
+# 2018-11-20 14:30:55.243475
++sorted(set([1, 3, 6, 4, 1, 2]))
+
+# 2018-11-20 14:31:36.386410
++dd = sorted(set([1, 3, 6, 4, 1, 2]))
+
+# 2018-11-20 14:31:37.047781
++dd
+
+# 2018-11-20 14:31:49.107810
++range(1, len(dd))
+
+# 2018-11-20 14:31:51.863269
++list(range(1, len(dd)))
+
+# 2018-11-20 14:32:29.499440
++list(range(1, 100000))[-1]
+
+# 2018-11-20 14:36:08.933076
++A =  [1, 3, 6, 4, 1, 2]
+
+# 2018-11-20 14:36:17.569959
++A = [i for i in sorted(set(A)) if i == abs(i)]
+
+# 2018-11-20 14:36:18.248711
++A
+
+# 2018-11-20 14:36:31.140778
++list(range(1, len(A)))
+
+# 2018-11-20 14:36:56.565124
++A = [1,2,3]
+
+# 2018-11-20 14:37:08.932642
++list(range(1, len(A)+1))
+
+# 2018-11-20 15:08:10.587857
++d = []
+
+# 2018-11-20 15:08:16.065551
++d[2] = 3
+
+# 2018-11-20 15:08:47.866046
++d = [-1, 1, 2, 3]
+
+# 2018-11-20 15:08:52.882942
++result = []
+
+# 2018-11-20 15:10:37.867535
++dir(-20)
+
+# 2018-11-20 15:10:53.100797
++real(-20)
+
+# 2018-11-20 15:11:24.689429
++type(-20)
+
+# 2018-11-20 15:11:30.424610
++int(-20).real()
+
+# 2018-11-20 15:11:36.028995
++dir(int(-20))
+
+# 2018-11-20 15:11:43.087220
++neg = -20
+
+# 2018-11-20 15:11:47.368442
++neg.real
+
+# 2018-11-20 15:11:57.606470
++neg.real()
+
+# 2018-11-20 15:12:04.790817
++neg.to_bytes
+
+# 2018-11-20 15:12:07.182555
++neg.to_bytes()
+
+# 2018-11-20 15:12:14.733250
++neg.to_bytes(1)
+
+# 2018-11-20 15:12:17.809810
++neg.to_bytes(1, 1)
+
+# 2018-11-20 15:12:22.858142
++neg.to_bytes(1, "1")
+
+# 2018-11-20 15:12:26.117461
++neg.to_bytes(1, "little")
+
+# 2018-11-20 15:18:40.538053
++d
+
+# 2018-11-20 15:18:41.503069
++dd
+
+# 2018-11-20 15:18:44.093021
++d = {}
+
+# 2018-11-20 15:18:52.737225
++d = {1: True, 2:True}
+
+# 2018-11-20 15:18:53.735601
++d
+
+# 2018-11-20 15:18:59.885382
++for i in d: 
++    print(i)
+
+# 2018-11-20 15:19:10.437480
++d = {1: True, 2:True, "aaa": True}
+
+# 2018-11-20 15:19:12.572788
++for i in d: 
++    print(i)
+
+# 2018-11-20 15:21:50.544861
++None > 0
+
+# 2018-11-20 15:22:37.256155
++range(d)
+
+# 2018-11-20 15:22:38.188547
++d
+
+# 2018-11-20 15:22:43.010097
++d.keys()
+
+# 2018-11-20 15:22:47.790913
++range(d.keys())
+
+# 2018-11-20 15:23:44.133672
++len(d)
+
+# 2018-11-20 15:25:08.276884
++d
+
+# 2018-11-20 15:25:10.222253
++dd
+
+# 2018-11-20 15:25:13.721388
++dd.index(3)
+
+# 2018-11-20 15:25:15.960726
++dd.index(15)
+
+# 2018-11-20 15:25:25.751131
++1 in d
+
+# 2018-11-20 15:25:28.528575
++d
+
+# 2018-11-20 15:25:30.993604
++'aaa' in d
+
+# 2018-11-20 15:25:33.269802
++2 in d
+
+# 2018-11-20 15:25:35.248906
++3 in d
+
+# 2018-11-20 15:26:32.519346
++dd
+
+# 2018-11-20 15:35:40.899494
++nums = [1,2,0]
+
+# 2018-11-20 15:35:45.564400
++result = {}
+
+# 2018-11-20 15:36:22.179186
++for i in range(len(nums)):
++    if i in nums:
++        result[i] = True
++    else:
++        result[i] = False
++        break
+
+# 2018-11-20 15:36:26.236695
++result
+
+# 2018-11-20 15:36:50.499955
++list(range(1, len(result)))
+
+# 2018-11-20 15:37:46.112432
++list(range(len(result)))
+
+# 2018-11-20 15:37:51.763088
++list(range(1, len(result)))
+
+# 2018-11-20 15:37:55.116978
++len(result)
+
+# 2018-11-20 15:38:01.994625
++list(range(1, 3))
+
+# 2018-11-20 15:41:48.659204
++for i in range(1, len({0: False, 1: True, 2: False, 3: True}) + 1):
++    if i not in result:
++        print(i)
+
+# 2018-11-20 15:44:59.663794
++for i in range(1, len({0: False, 1: True, 2: False, 3: True}) + 1):
++    print(i)
++    if result.get(i) is None:
++        print('gottem')
+
+# 2018-11-20 15:45:10.516650
++result
+
+# 2018-11-20 15:45:13.674130
++result = {0: False, 1: True, 2: False, 3: True}
+
+# 2018-11-20 15:45:18.717201
++result.get(2)
+
+# 2018-11-20 15:48:14.341305
++class Solution:
++    def firstMissingPositive(self, nums):
++        if 1 not in nums:
++            return 1
++        result = {}
++        for i in range(len(nums)):
++            if i in nums:
++                result[i] = True
++            else:
++                result[i] = None
++        for i in range(1, len(result) + 1):
++            print(i)
++            if result.get(i) is None:
++                return i
+
+# 2018-11-20 15:48:26.460533
++Solution.firstMissingPositive( [3,4,-1,1])
+
+# 2018-11-20 15:48:32.556033
++Solution.firstMissingPositive([3,4,-1,1])
+
+# 2018-11-20 15:48:40.617118
++Solution.firstMissingPositive(Solution, [3,4,-1,1])
+
+# 2018-11-20 15:49:43.730884
++Solution.firstMissingPositive(Solution, [1])
+
+# 2018-11-20 15:51:02.093512
++list(range(1))
+
+# 2018-11-20 16:19:37.392622
++18**2 + 80**2 == 82**2
+
+# 2018-11-20 16:19:51.762769
++18**2 + 80**2
+
+# 2018-11-20 16:20:14.451287
++5**2 + 12**2
+
+# 2018-11-20 16:20:22.642394
++(5**2 + 12**2) * 2
+
+# 2018-11-20 16:20:29.147995
++338 % 169
+
+# 2018-11-20 16:20:36.822225
++338 % 168
+
+# 2018-11-20 16:20:49.978991
++338/168
+
+# 2018-11-20 16:22:13.359874
++bin(12)
+
+# 2018-11-20 16:22:18.545749
++bin(120)
+
+# 2018-11-20 16:22:31.428387
++str(bin(120))
+
+# 2018-11-20 16:22:48.016614
++str(bin(120125132))
+
+# 2018-11-20 16:23:24.623583
++bin(12)[1:]
+
+# 2018-11-20 16:23:28.329316
++bin(12)[2:]
+
+# 2018-11-20 16:24:43.916276
++help(bin)
+
+# 2018-11-20 16:24:47.787035
++b12
+
+# 2018-11-20 16:25:03.055153
++dir(bin(12))
+
+# 2018-11-20 16:26:47.486358
++529 % 4
+
+# 2018-11-20 16:26:51.143105
++4 % 529
+
+# 2018-11-20 16:26:54.140293
++16 % 529
+
+# 2018-11-20 16:27:01.088503
++256  % 529
+
+# 2018-11-20 16:27:06.622690
++1024  % 529
+
+# 2018-11-20 16:27:43.672731
++495
+
+# 2018-11-20 16:27:59.893201
++bin(529)
+
+# 2018-11-20 16:28:03.808167
++bin(1024)
+
+# 2018-11-20 16:28:13.957305
++bin(295)
+
+# 2018-11-20 16:28:25.690651
++bin(495)
+
+# 2018-11-20 16:29:51.521405
++529 >> 495
+
+# 2018-11-20 16:29:56.418103
++529 % 495
+
+# 2018-11-20 16:29:59.880148
++bin(34)
+
+# 2018-11-20 16:30:39.818323
++34
+
+# 2018-11-20 16:30:45.123893
++64 % 34
+
+# 2018-11-20 16:30:53.214321
++bin(34), bin(30)
+
+# 2018-11-20 16:31:11.254392
++len(bin(34))
+
+# 2018-11-20 16:31:15.078182
++len(bin(30))
+
+# 2018-11-20 16:31:35.968852
++len(bin(495)), len(bin(529))
+
+# 2018-11-20 16:32:41.918947
++man([1,4])
+
+# 2018-11-20 16:32:44.398246
++max([1,4])
+
+# 2018-11-20 16:38:44.916660
++bin(17)
+
+# 2018-11-20 16:38:53.502120
++32% 17
+
+# 2018-11-20 16:38:56.377682
++bin(15)
+
+# 2018-11-20 16:39:21.715431
++17 % 15
+
+# 2018-11-20 16:39:25.423964
++bin(2)
+
+# 2018-11-20 16:40:07.137710
++bin(17).split(1)
+
+# 2018-11-20 16:40:16.401181
++str(bin(17))[2:].split(1)
+
+# 2018-11-20 16:40:20.879029
++str(bin(17))[2:]
+
+# 2018-11-20 16:40:28.150808
++str(bin(17))[2:].split()
+
+# 2018-11-20 16:40:30.098839
++str(bin(17))[2:].split(1)
+
+# 2018-11-20 16:40:34.187905
++str(bin(17))[2:].split('1')
+
+# 2018-11-20 16:40:39.351713
++max(str(bin(17))[2:].split('1'))
+
+# 2018-11-20 16:41:01.283094
++bin(529)
+
+# 2018-11-20 16:41:07.852450
++max(str(bin(529))[2:].split('1'))
+
+# 2018-11-20 16:41:55.650573
++max(str(bin(1))[2:].split('1'))
+
+# 2018-11-20 16:42:26.567588
++max(str(bin(32))[2:].split('1'))
+
+# 2018-11-20 16:42:34.224454
++len(max(str(bin(32))[2:].split('1')))
+
+# 2018-11-20 16:43:27.559430
++len(max(str(bin(32))[2:].strip('0').split('1')))
+
+# 2018-11-20 17:03:26.926215
++nums
+
+# 2018-11-20 17:03:29.906530
++range(nums)
+
+# 2018-11-20 17:03:33.429595
++range(*nums)
+
+# 2018-11-20 17:03:43.212008
++range(nums.__len__())
+
+# 2018-11-20 17:18:38.404576
++4 % 5
+
+# 2018-11-20 17:18:43.367030
++4 + 1 % 5
+
+# 2018-11-20 17:19:06.699873
++4 + 3
+
+# 2018-11-20 17:19:20.833231
++7 % 5
+
+# 2018-11-20 17:19:26.271554
++7 % 5 + 1
+
+# 2018-11-20 17:19:44.188698
++0 + 3
+
+# 2018-11-20 17:19:47.195890
++3 % 5
+
+# 2018-11-20 17:20:10.676660
++9 % 5
+
+# 2018-11-20 17:20:31.705772
++8 % 5
+
+# 2018-11-20 17:21:34.801296
++[None for i in range(5)]
+
+# 2018-11-20 17:24:40.450406
++# you can write to stdout for debugging purposes, e.g.
++# print("this is a debug message")
++
++def solution(A, K):
++    # write your code in Python 3.6
++    new_A = [None for i in range(len(A))]
++    for i in A:
++        new_A[(i+K) % len(A)] = A[i]
++    return new_A
+
+# 2018-11-20 17:24:52.099953
++solution([3, 8, 9, 7, 6], 3)
+
+# 2018-11-20 17:25:07.950496
++len([3,8,9,7,6])
+
+# 2018-11-20 17:25:26.374320
++[None for i in range(5)]
+
+# 2018-11-20 17:25:29.432200
++len([None for i in range(5)])
+
+# 2018-11-20 17:29:49.545518
++[3,3,4,5].count(3)
+
+# 2018-11-20 17:41:10.646603
++arr = [9,3,9,3,9,7,9]
+
+# 2018-11-20 17:43:15.847744
++arr[len(arr//2)]
+
+# 2018-11-20 17:43:21.423750
++arr[len(arr2)//2]
+
+# 2018-11-20 17:43:24.325821
++arr[len(arr)//2]
+
+# 2018-11-20 17:43:29.354999
++arr[:len(arr)//2]
+
+# 2018-11-20 17:43:43.615898
++arr[len(arr)//2:]
+
+# 2018-11-20 17:45:31.146988
++[i for i in range(len(arr))]
+
+# 2018-11-20 17:45:37.291803
++[i for i in range(len(arr), 2)]
+
+# 2018-11-20 17:45:40.850211
++[i for i in range(len(arr), 1)]
+
+# 2018-11-20 17:45:48.174163
++[i for i in range(0, len(arr), 2)]
+
+# 2018-11-20 17:45:54.964286
++[i for i in range(1, len(arr), 2)]
+
+# 2018-11-20 17:45:59.673031
++len(arr)
+
+# 2018-11-20 17:47:17.105060
++[i for i in arr[:len(arr)//2]]
+
+# 2018-11-20 17:47:19.244902
++arr
+
+# 2018-11-20 17:49:28.025756
++[1]
+
+# 2018-11-20 17:49:30.603499
++aa = [1]
+
+# 2018-11-20 17:49:37.529064
++aa[:len(aa)//2]
+
+# 2018-11-20 17:57:04.839027
++len(aa)//2
+
+# 2018-11-20 17:57:07.145478
++aa
+
+# 2018-11-20 17:57:08.835104
++arr
+
+# 2018-11-20 17:57:12.241397
++len(arr)//2
+
+# 2018-11-20 17:57:53.562875
++arr[:3], arr[3:]
+
+# 2018-11-20 18:10:15.252006
++# you can write to stdout for debugging purposes, e.g.
++# print("this is a debug message")
++
++def solution(A):
++    # write your code in Python 3.6
++    def split(arr, i):
++        pivot = len(arr)//2
++        first, second = arr[:pivot], arr[pivot:]
++        
++        if i in first and i in second:
++            return None
++        if len(arr) == 1:
++            return i
++        else:
++            if split(first, i) or split(second, i):
++                return i
++    for i in set(A):
++        if split(A, i):
++            return i
+
+# 2018-11-20 18:10:33.196983
++solution([4,4,4,4,5,6,6,6,6,7,8,8,7])
+
+# 2018-11-20 18:15:08.632677
++# you can write to stdout for debugging purposes, e.g.
++# print("this is a debug message")
++
++def solution(A):
++    # write your code in Python 3.6
++    def split(arr, i):
++        if len(arr) == 1:
++            return i
++        pivot = len(arr)//2
++        first, second = arr[:pivot], arr[pivot:]
++        
++        if i in first and i in second:
++            return None
++        if i in first:
++            return split(first, i)
++        if i in second:
++            return split(second, i)
++        
++    for i in set(A):
++        if split(A, i) is not None:
++            return i
+
+# 2018-11-20 18:15:15.720379
++solution([4,4,4,4,5,6,6,6,6,7,8,8,7])
+
+# 2018-11-20 18:16:41.353728
++9/2
+
+# 2018-11-20 18:16:43.982371
++int(9/2)
+
+# 2018-11-20 18:20:57.011144
++7 ^ 7
+
+# 2018-11-20 18:21:32.209789
++pairing = [4,4,4,4,5,6,6,6,6,7,8,8,7]
+
+# 2018-11-20 18:21:46.581404
++4 ^ 0
+
+# 2018-11-20 18:22:01.074072
++0 ^ 4
+
+# 2018-11-20 18:22:06.762241
++result = 4
+
+# 2018-11-20 18:22:13.774764
++4 ^ 4
+
+# 2018-11-20 18:22:21.968271
++4 ^ 7
+
+# 2018-11-20 18:22:25.717526
++7 ^ 4
+
+# 2018-11-20 18:22:42.270533
++result ^= 4
+
+# 2018-11-20 18:22:43.586568
++result
+
+# 2018-11-20 18:22:52.149739
++result ^= 4
+
+# 2018-11-20 18:22:53.249960
++result
+
+# 2018-11-20 18:23:02.788570
++result ^= 7
+
+# 2018-11-20 18:23:03.684096
++result
+
+# 2018-11-20 18:23:09.757470
++result ^= 4
+
+# 2018-11-20 18:23:10.586747
++result
+
+# 2018-11-20 18:23:36.534398
++result = 0
+
+# 2018-11-20 18:23:47.948863
++for i in pairing:
++    result ^= i
+
+# 2018-11-20 18:23:48.920790
++result
+
+# 2018-11-20 18:24:43.614562
++7 ^ 7
+
+# 2018-11-20 18:24:50.237043
++7 ^ 3
+
+# 2018-11-20 18:24:56.519146
++4 ^ 3
+
+# 2018-11-20 18:25:01.801364
++bin(3)
+
+# 2018-11-20 18:25:04.346805
++bin(4)
+
+# 2018-11-20 18:25:29.004112
++bin(7)
+
+# 2018-11-20 18:26:59.841816
++int(111)
+
+# 2018-11-20 18:27:04.080649
++int(b'111')
+
+# 2018-11-20 18:27:07.819924
++int(b'ob111')
+
+# 2018-11-20 18:27:10.430711
++int(b'0b111')
+
+# 2018-11-20 18:27:17.878919
++int('0b111')
+
+# 2018-11-20 18:27:34.380038
++int(b'0b11')
+
+# 2018-11-20 18:28:23.828129
++int(111, 2)
+
+# 2018-11-20 18:28:28.502146
++int('111', 2)
+
+# 2018-11-20 18:31:51.986174
++bin(5)
+
+# 2018-11-20 18:31:57.591873
++bin(7)
+
+# 2018-11-20 18:32:13.333678
++int('010', 2)
+
+# 2018-11-20 18:32:17.465940
++bin(2)
+
+# 2018-11-20 18:33:14.978380
++0 ^ 7
+
+# 2018-11-20 18:33:41.646126
++2
+
+# 2018-11-20 18:33:43.337909
++~2
+
+# 2018-11-20 18:33:50.777463
++~bin(2)
+
+# 2018-11-20 18:33:52.902575
++bin(2)
+
+# 2018-11-20 18:33:56.674322
++bin(~2)
+
+# 2018-11-20 18:34:07.494897
++0 ^ 2
+
+# 2018-11-20 18:34:36.426446
++0 & 2
+
+# 2018-11-20 18:34:47.543224
++1 & 2
+
+# 2018-11-20 18:34:52.114351
++0 | 2
+
+# 2018-11-20 18:35:22.156591
++~ 2
+
+# 2018-11-20 18:36:10.639482
++2 << 1
+
+# 2018-11-20 18:36:13.302487
++2 >> 1
+
+# 2018-11-20 18:36:23.667929
++bin(5)
+
+# 2018-11-20 18:36:30.919001
++5 >> 1
+
+# 2018-11-20 18:40:19.485711
++0 & 2
+
+# 2018-11-20 18:40:22.428864
++0 | 2
+
+# 2018-11-20 18:40:25.716194
++2 | 1
+
+# 2018-11-20 18:40:28.538283
++3 | 3
+
+# 2018-11-20 18:40:32.995257
++3 | 4
+
+# 2018-11-20 18:41:27.436814
++5 | 4
+
+# 2018-11-20 18:41:30.183219
++5 | 3
+
+# 2018-11-20 18:41:36.909835
++bin(5), bin (3)
+
+# 2018-11-20 18:42:58.201135
++5 & 3
+
+# 2018-11-20 18:43:32.119273
++a = [1,2,4]
+
+# 2018-11-20 18:43:41.597677
++3 & 1
+
+# 2018-11-20 18:43:44.479808
++1 & 2
+
+# 2018-11-20 18:43:47.228878
++0 & 4
+
+# 2018-11-20 18:43:59.660179
++2 & 1
+
+# 2018-11-20 18:44:03.645095
++0 & 2
+
+# 2018-11-20 18:44:08.042797
++0 & 4
+
+# 2018-11-20 18:44:14.861940
++bin(4)
+
+# 2018-11-20 18:44:23.827757
++4 ^ 3
+
+# 2018-11-20 18:44:35.568689
++4 | 3
+
+# 2018-11-20 18:44:39.016264
++4 & 3
+
+# 2018-11-20 18:45:08.502826
++4 | ~4
+
+# 2018-11-20 18:45:12.993555
++4 | abs(~4)
+
+# 2018-11-20 18:45:18.739530
++4 | ~4
+
+# 2018-11-20 18:45:45.711778
++1 ^ 1
+
+# 2018-11-20 18:45:57.012252
++0 ^ 1
+
+# 2018-11-20 18:46:00.324914
++1 ^ 2
+
+# 2018-11-20 18:46:04.741860
++3 ^ 3
+
+# 2018-11-20 18:46:11.162660
++3 ^ 4
+
+# 2018-11-20 18:46:20.941582
++bin(7)
+
+# 2018-11-20 18:46:48.353251
++7 | 3
+
+# 2018-11-20 18:46:52.467680
++3 | 7
+
+# 2018-11-20 18:46:59.379520
++7 >> 3
+
+# 2018-11-20 18:47:02.013038
++7 >> 2
+
+# 2018-11-20 18:47:04.378725
++7 >> 1
+
+# 2018-11-20 18:47:36.808017
++arr = [1,4,3,2,6]
+
+# 2018-11-20 18:47:43.273696
++1 ^ 1
+
+# 2018-11-20 18:47:46.730893
++0 ^ 4
+
+# 2018-11-20 18:47:49.594032
++4 ^ 3
+
+# 2018-11-20 18:47:53.691817
++7 ^ 2
+
+# 2018-11-20 18:47:56.463480
++5 ^ 6
+
+# 2018-11-20 18:48:00.590990
++3 >> 1
+
+# 2018-11-20 18:48:02.919902
++3 << 5
+
+# 2018-11-20 18:48:05.901153
++3 << 1
+
+# 2018-11-20 18:48:55.714096
++sum(arr)
+
+# 2018-11-20 18:48:57.900248
++bin(16)
+
+# 2018-11-20 18:49:05.732703
++16 ^ 5
+
+# 2018-11-20 18:49:13.217812
++16 | 5
+
+# 2018-11-20 18:49:17.596909
++16 & 5
+
+# 2018-11-20 18:49:34.322648
++bin(16)
+
+# 2018-11-20 18:49:37.643299
++bin(5)
+
+# 2018-11-20 18:50:10.646401
++[bin(i) for i in range(3)]
+
+# 2018-11-20 18:50:14.074015
++[bin(i) for i in range(5)]
+
+# 2018-11-20 18:50:41.534898
++[bin(i) for i in range(1,6)]
+
+# 2018-11-20 18:51:03.518513
++1 >> 1
+
+# 2018-11-20 18:51:16.525644
++1 & 2
+
+# 2018-11-20 18:51:20.919163
++1 | 2
+
+# 2018-11-20 18:51:29.083171
++3 | 3
+
+# 2018-11-20 18:51:37.295647
++3 | 4
+
+# 2018-11-20 18:51:42.021054
++bin(7)
+
+# 2018-11-20 18:51:49.018817
++7 | 6
+
+# 2018-11-20 18:52:01.224348
++7 | 5
+
+# 2018-11-20 18:52:24.829277
++1 | 1
+
+# 2018-11-20 18:52:26.508385
++1 | 2
+
+# 2018-11-20 18:52:29.590023
++2 | 3
+
+# 2018-11-20 18:52:31.099342
++3 | 3
+
+# 2018-11-20 18:52:36.705455
++3 | 4
+
+# 2018-11-20 18:53:01.275963
++3 ^ 4
+
+# 2018-11-20 18:53:04.079144
++4 ^ 3
+
+# 2018-11-20 18:53:10.449024
++bin(4), bin(3)
+
+# 2018-11-20 18:53:47.612705
++[1,2,3,5]
+
+# 2018-11-20 18:54:07.274615
++[bin(i) for i in [1,2,3,5]]
+
+# 2018-11-20 18:54:17.540316
++bin(4)
+
+# 2018-11-20 18:55:51.433906
++5 & 4
+
+# 2018-11-20 18:55:54.530645
++5 | 4
+
+# 2018-11-20 18:55:57.346295
++bin(5)
+
+# 2018-11-20 18:55:59.841978
++bin(4)
+
+# 2018-11-20 18:56:12.601212
++1 | 2
+
+# 2018-11-20 18:56:17.115076
++3 | 2
+
+# 2018-11-20 18:56:19.787621
++3 | 4
+
+# 2018-11-20 18:56:22.826834
++bin(3)
+
+# 2018-11-20 18:56:24.387748
++bin(4)
+
+# 2018-11-20 18:56:43.735065
++7 >> 1
+
+# 2018-11-20 18:56:47.831162
++1 | 2
+
+# 2018-11-20 18:56:49.639891
++3 >> 1
+
+# 2018-11-20 18:56:57.374953
++4 | 5
+
+# 2018-11-20 18:56:59.213302
++5 >> 1
+
+# 2018-11-20 18:57:10.497124
++7 | 5
+
+# 2018-11-20 18:57:15.379991
++7 >> 1
+
+# 2018-11-20 18:57:41.884721
++bin(11)
+
+# 2018-11-20 18:58:00.815853
++bin(4)
+
+# 2018-11-20 18:58:09.900918
++~ 11
+
+# 2018-11-20 18:58:22.113380
++11 ^ 11
+
+# 2018-11-20 18:58:26.508033
++11 | 11
+
+# 2018-11-20 18:58:30.156320
++11 >> 1
+
+# 2018-11-20 18:58:33.939092
++bin(5)
+
+# 2018-11-20 18:58:44.074553
++11 >> bin(4)
+
+# 2018-11-20 18:58:54.212468
++11 & 4
+
+# 2018-11-20 18:59:50.723528
++4 ^ 11
+
+# 2018-11-20 18:59:53.086674
++11 ^ 4
+
+# 2018-11-20 18:59:56.715974
++bin(15)
+
+# 2018-11-20 19:00:26.630036
++11- 8
+
+# 2018-11-20 19:01:30.161569
++10
+
+# 2018-11-20 19:03:36.298797
++1 | 1
+
+# 2018-11-20 19:03:47.681244
++1 ^ 1
+
+# 2018-11-20 19:03:54.234636
++arr
+
+# 2018-11-20 19:03:59.155370
++result = 0
+
+# 2018-11-20 19:04:23.693426
++for i in arr:
++    result = (result + 1 ^ i)
+
+# 2018-11-20 19:04:25.518143
++result
+
+# 2018-11-20 19:05:01.809981
++result = 9
+
+# 2018-11-20 19:05:04.922582
++result = 0
+
+# 2018-11-20 19:05:12.735644
++for i in arr:
++    result = (result ^ i + 1)
+
+# 2018-11-20 19:05:13.996298
++result
+
+# 2018-11-20 19:05:19.854994
++len(arr)
+
+# 2018-11-20 19:05:29.346337
++5 | 7
+
+# 2018-11-20 19:05:32.359678
++5 & 7
+
+# 2018-11-20 19:05:35.697325
++bin(5)
+
+# 2018-11-20 19:05:43.254210
++bin(7)
+
+# 2018-11-20 19:06:11.707338
++arr = [2,3,4,5,6]
+
+# 2018-11-20 19:06:16.611951
++result = 0
+
+# 2018-11-20 19:06:20.797312
++for i in arr:
++    result = (result ^ i + 1)
+
+# 2018-11-20 19:06:21.912440
++result
+
+# 2018-11-20 19:06:30.631954
++len(arr)
+
+# 2018-11-20 19:06:35.046399
++5 | 5
+
+# 2018-11-20 19:06:42.854829
++5 | 3
+
+# 2018-11-20 23:14:25.177255
++sum([1,2,3,5])
+
+# 2018-11-20 23:14:39.623306
++sum([1,3,4,5])
+
+# 2018-11-20 23:14:49.965992
++sum([2,3,4,5])
+
+# 2018-11-20 23:15:04.994184
++sum([1,2,3,4])
+
+# 2018-11-20 23:15:36.792103
++sum([1,2,3,4,5])
+
+# 2018-11-20 23:16:27.965782
++d =[1,2,3,4]
+
+# 2018-11-20 23:16:46.982127
++list(range(1, len(4)+1))
+
+# 2018-11-20 23:16:55.736837
++list(range(1, len(d)+1))
+
+# 2018-11-20 23:17:06.285015
++list(range(1, len(d)+2))
+
+# 2018-11-20 23:18:02.692274
++sum(range(1, len(d)+2))
+
+# 2018-11-20 23:29:06.891712
++10 % 85
+
+# 2018-11-20 23:29:14.968920
++85 // 10
+
+# 2018-11-20 23:29:21.804473
++10 // 85
+
+# 2018-11-20 23:29:29.085776
++85 / 10
+
+# 2018-11-20 23:30:00.740458
++85 // 30
+
+# 2018-11-20 23:30:46.870606
++85-10
+
+# 2018-11-20 23:30:51.569736
++75 //  30
+
+# 2018-11-20 23:31:57.680465
++5-1
+
+# 2018-11-20 23:31:59.400812
++4 // 2
+
+# 2018-11-20 23:34:05.761208
++(5 - 1) // 2
+
+# 2018-11-20 23:35:24.981202
++5-1 // 2
+
+# 2018-11-20 23:35:28.246177
++4 // 2
+
+# 2018-11-20 23:35:47.383650
++5 - 1
+
+# 2018-11-20 23:37:58.160898
++3 % 0
+
+# 2018-11-20 23:38:01.390780
++0 % 3
+
+# 2018-11-20 23:39:15.558934
++0 // 3
+
+# 2018-11-20 23:54:17.378646
++0 ^ 4
+
+# 2018-11-20 23:54:20.616359
++4 ^ 5
+
+# 2018-11-20 23:54:28.622908
++1 ^ 4
+
+# 2018-11-20 23:54:35.952301
++5 ^ 5
+
+# 2018-11-21 00:02:39.488931
++d = [3, 1, 2, 4 , 3]
+
+# 2018-11-21 00:02:40.649116
++s
+
+# 2018-11-21 00:02:41.540013
++d
+
+# 2018-11-21 00:07:17.580697
++for i in range(1, (len(d) + 1)//2):
++    dd[i] = ()
+
+# 2018-11-21 00:07:30.338538
++len(d)
+
+# 2018-11-21 00:07:37.702568
++dd
+
+# 2018-11-21 00:07:46.721014
++ddd = {}
+
+# 2018-11-21 00:09:14.007923
++for i in range(len(d)):
++    ddd[i+1] = sum(d[i+1:])
+
+# 2018-11-21 00:09:15.747341
++ddd
+
+# 2018-11-21 00:09:43.501662
++range(len(d))
+
+# 2018-11-21 00:09:47.939608
++list(range(len(d)))
+
+# 2018-11-21 00:10:08.119737
++sum(d)
+
+# 2018-11-21 00:10:49.339164
++list(range(1, len(d)+ 1))
+
+# 2018-11-21 00:10:57.835591
++list(range(1, len(d)))
+
+# 2018-11-21 00:11:11.270227
++range(1, len(d))
+
+# 2018-11-21 00:11:41.872711
++for i in range(1, len(d)):
++    ddd[i] = sum(d[i:])
+
+# 2018-11-21 00:11:44.113483
++ddd
+
+# 2018-11-21 00:11:48.166597
++del ddd
+
+# 2018-11-21 00:11:51.950789
++ddd = {}
+
+# 2018-11-21 00:11:53.843175
++for i in range(1, len(d)):
++    ddd[i] = sum(d[i:])
+
+# 2018-11-21 00:11:54.794560
++ddd
+
+# 2018-11-21 00:12:02.996528
++sum(d)
+
+# 2018-11-21 00:12:47.413609
++a = [1,2,3,4]
+
+# 2018-11-21 00:13:37.320904
++sum(d[1:])
+
+# 2018-11-21 00:13:50.228247
++sum(d[-1::])
+
+# 2018-11-21 00:14:07.031425
++sum(d[2:])
+
+# 2018-11-21 00:14:13.232483
++sum(d[-2::])
+
+# 2018-11-21 00:14:29.781378
++sum(d)
+
+# 2018-11-21 00:15:15.925943
++sum(d[-3::])
+
+# 2018-11-21 00:15:21.544524
++sum(d[-4::])
+
+# 2018-11-21 00:15:26.430315
++sum(d[-5::])
+
+# 2018-11-21 00:15:30.388230
++sum(d[-6::])
+
+# 2018-11-21 00:15:33.270251
++sum(d[-7::])
+
+# 2018-11-21 00:15:38.534286
++sum(d[-1::])
+
+# 2018-11-21 00:15:42.481880
++sum(d[1:])
+
+# 2018-11-21 00:15:57.442813
++sum(d[4:])
+
+# 2018-11-21 00:16:03.172371
++sum(d[-4::])
+
+# 2018-11-21 00:16:30.711115
++sum(d[:4])
+
+# 2018-11-21 00:16:34.800526
++sum(d[:3])
+
+# 2018-11-21 00:16:41.259626
++sum(d[3:])
+
+# 2018-11-21 00:17:15.851457
++for i in range(1, len(d)):
++    ddd[i] = abs(sum(d[i:]) - sum(d[:i]))
+
+# 2018-11-21 00:17:16.950029
++ddd
+
+# 2018-11-21 00:17:57.068823
++for i in range(1, len(d)):
++    difference = abs(sum(d[i:]) - sum(d[:i]))
+
+# 2018-11-21 00:18:00.914315
++del ddd
+
+# 2018-11-21 00:18:03.588391
++ddd = {}
+
+# 2018-11-21 00:19:38.977150
++for i in range(1, len(d)):
++    difference = abs(sum(d[i:]) - sum(d[:i]))
+
+# 2018-11-21 00:19:42.717681
++ddd = set()
+
+# 2018-11-21 00:19:55.662703
++for i in range(1, len(d)):
++    ddd.add(abs(sum(d[i:]) - sum(d[:i])))
+
+# 2018-11-21 00:19:59.217151
++min(ddd)
+
+# 2018-11-21 00:22:01.729083
++range(1, len(d)//2 + 1)
+
+# 2018-11-21 00:22:33.192056
++range(1, len(d)//2 + 2)
+
+# 2018-11-22 11:46:20.940114
++ls
+
+# 2018-11-22 11:49:41.935389
++d
+
+# 2018-11-22 11:49:47.557652
++d.append(3)
+
+# 2018-11-22 11:49:48.079482
++d
+
+# 2018-11-22 11:49:52.235574
++d.append(10)
+
+# 2018-11-22 11:52:11.121360
++for i, v in enumerate(d):
++    print(abs(sum(d[:i])-sum(d[i:])))
+
+# 2018-11-22 11:55:26.564396
++d[:0]
+
+# 2018-11-22 11:55:31.671625
++d[:1]
+
+# 2018-11-22 11:55:48.882908
++sum(d[:1]), sum(d[-1:])
+
+# 2018-11-22 11:56:14.200094
++d[:1]
+
+# 2018-11-22 11:56:17.574272
++d[:-1]
+
+# 2018-11-22 11:56:26.893738
++d[1:]
+
+# 2018-11-22 11:57:33.686683
++d[0:]
+
+# 2018-11-22 11:57:45.429136
++s[:1]
+
+# 2018-11-22 11:57:47.510326
++d[:1]
+
+# 2018-11-22 11:58:00.381588
++d[6]
+
+# 2018-11-22 11:58:03.904004
++d[:6]
+
+# 2018-11-22 12:00:27.111510
++'01'
+
+# 2018-11-22 12:14:32.047861
++3 -(3 - 13)
+
+# 2018-11-22 12:14:40.011375
++3 - 13
+
+# 2018-11-22 12:14:59.896392
++3 - 133 - (13 - 3)
+
+# 2018-11-22 12:15:05.965066
++3 - (13 - 3)
+
+# 2018-11-22 12:15:10.549731
++3 - 13 - 3
+
+# 2018-11-22 12:16:10.185483
++3 -(3 - 13)
+
+# 2018-11-22 12:16:22.318761
++3 - 13 - 3
+
+# 2018-11-22 12:16:37.103082
++13 - 3
+
+# 2018-11-22 12:16:39.052003
++3 - 10
+
+# 2018-11-22 12:16:44.508425
++3 - 13
+
+# 2018-11-22 12:16:45.817665
++-3
+
+# 2018-11-22 12:16:50.952862
++3 - (13 - 3)
+
+# 2018-11-22 12:17:49.669346
++13 - 5
+
+# 2018-11-22 12:23:53.192349
++13 - 2(3)
+
+# 2018-11-22 12:24:00.351104
++13 - 2 * 3
+
+# 2018-11-22 12:24:07.953035
++13 - 2*4
+
+# 2018-11-22 12:24:18.636776
++13 - 2 * 6
+
+# 2018-11-22 12:24:28.378850
++13 - 2 * 9
+
+# 2018-11-22 12:27:41.647084
++13 - 20
+
+# 2018-11-22 12:39:41.512686
++sum([-1000, 1000])
+
+# 2018-11-22 12:39:44.405101
++0 - 1000
+
+# 2018-11-22 12:40:02.284428
++-1000 - 1000
+
+# 2018-11-22 12:47:39.008525
++range(1, 4)
+
+# 2018-11-22 12:47:48.111135
++list(range(1, 5))
+
+# 2018-11-22 12:55:48.652230
++sum(range(1, 100000))
+
+# 2018-11-22 12:56:39.706206
++set(1,3,4) == [1,3,4]
+
+# 2018-11-22 12:56:47.653041
++{1,3,4} == [1,3,4]
+
+# 2018-11-22 12:56:52.747655
++{1,3,4}
+
+# 2018-11-22 13:00:54.798363
++x = 0
+
+# 2018-11-22 13:01:00.451575
++x += x+1
+
+# 2018-11-22 13:01:00.947305
++x
+
+# 2018-11-22 13:01:02.032636
++x += x+1
+
+# 2018-11-22 13:01:03.232467
++x
+
+# 2018-11-22 13:01:05.396318
++x += x+1
+
+# 2018-11-22 13:01:05.748125
++x
+
+# 2018-11-22 13:01:21.779673
++1
+
+# 2018-11-22 13:01:24.136127
++1+2
+
+# 2018-11-22 13:01:26.431129
++3+3
+
+# 2018-11-22 13:01:30.105050
++3+4
+
+# 2018-11-22 13:01:37.065050
++x = 0
+
+# 2018-11-22 13:01:42.874528
++x += 1
+
+# 2018-11-22 13:01:43.466828
++x
+
+# 2018-11-22 13:01:45.698757
++x += 2
+
+# 2018-11-22 13:01:46.749313
++x
+
+# 2018-11-22 13:01:48.974803
++x += 3
+
+# 2018-11-22 13:01:49.804612
++x
+
+# 2018-11-22 13:01:51.641752
++x = 0
+
+# 2018-11-22 13:01:54.388855
++x += x+1
+
+# 2018-11-22 13:01:54.845711
++x
+
+# 2018-11-22 13:01:56.417410
++x += x+1
+
+# 2018-11-22 13:01:56.878551
++x
+
+# 2018-11-22 13:03:43.237962
++1, 2, 5
+
+# 2018-11-22 13:04:13.870327
++list(range(1, 4))
+
+# 2018-11-22 13:04:20.715872
++1
+
+# 2018-11-22 13:04:25.575828
++1 + 1 + 1
+
+# 2018-11-22 13:04:35.179230
++3 + 3 + 1
+
+# 2018-11-22 13:05:51.684460
++[1, 3, 6, 10]
+
+# 2018-11-22 13:22:02.563301
++set()
+
+# 2018-11-22 13:22:35.682059
++10 & 4
+
+# 2018-11-22 13:22:39.411278
++10 | 4
+
+# 2018-11-22 13:22:43.181659
++14 ^ 4
+
+# 2018-11-22 13:22:46.227353
++10 ^ 4
+
+# 2018-11-22 13:23:31.399725
++10 | 4
+
+# 2018-11-22 13:23:34.246201
++10 | 5
+
+# 2018-11-22 13:23:37.441061
++11 | 5
+
+# 2018-11-22 13:23:48.462625
++1 | 2 | 3 | 4
+
+# 2018-11-22 13:24:14.228490
++7 ^ 4
+
+# 2018-11-22 13:24:16.799741
++3 ^ 3
+
+# 2018-11-22 13:24:19.630525
++0 ^ 2
+
+# 2018-11-22 13:24:21.429292
++2 ^ 1
+
+# 2018-11-22 13:24:25.714435
++7 ^ 3
+
+# 2018-11-22 13:26:57.415703
++10 ^ 4
+
+# 2018-11-22 13:27:14.821435
++7 + 8
+
+# 2018-11-22 13:27:18.307957
++bin(14)
+
+# 2018-11-22 13:27:59.893773
++bin(10), bin(4)
+
+# 2018-11-22 13:29:02.345808
++bin('1011', 2)
+
+# 2018-11-22 13:29:07.106359
++int('1011', 2)
+
+# 2018-11-22 13:29:12.846680
++bin(14)
+
+# 2018-11-22 13:29:18.684820
++bin(10), bin(4)
+
+# 2018-11-22 13:29:53.791731
++True ^ False
+
+# 2018-11-22 13:29:58.852294
++False ^ False
+
+# 2018-11-22 13:30:05.214158
++True ^ True
+
+# 2018-11-22 13:30:09.340893
++False ^ True
+
+# 2018-11-22 13:32:39.633140
++b'1110'
+
+# 2018-11-22 13:32:46.243788
++int(b'1100')
+
+# 2018-11-22 13:32:48.489548
++int(b'1100', 2)
+
+# 2018-11-22 13:32:57.038860
++int(b'1110', 2)
+
+# 2018-11-22 13:34:53.289296
++10 ^ 5
+
+# 2018-11-22 13:35:42.320144
++10 ^ 4
+
+# 2018-11-22 13:35:44.355944
++14 ^ 3
+
+# 2018-11-22 13:35:51.307569
++13 ^ 2
+
+# 2018-11-22 13:35:54.179176
++15 ^ 1
+
+# 2018-11-22 13:36:22.325221
++14 ^ 1
+
+# 2018-11-22 13:36:32.078792
++0 ^ 1
+
+# 2018-11-22 13:36:36.123011
++1 ^ 2
+
+# 2018-11-22 13:36:38.190872
++3 ^ 3
+
+# 2018-11-22 13:36:55.014201
++0 ^ 4
+
+# 2018-11-22 13:37:05.048696
++4 ^ 4
+
+# 2018-11-22 13:47:46.003624
++[0 for i in range(4)]
+
+# 2018-11-22 13:49:48.473107
++1 <= 3 <- 4
+
+# 2018-11-22 13:49:51.608718
++1 <= 3 <= 4
+
+# 2018-11-22 13:50:11.203708
++1 <= 2 <= 4
+
+# 2018-11-22 13:50:16.807189
++3 <= 2 <= 4
+
+# 2018-11-22 13:51:32.307170
++14 or 4
+
+# 2018-11-22 13:51:34.781549
++4 or 14
+
+# 2018-11-22 14:05:14.455514
++range(5)
+
+# 2018-11-22 14:05:17.543667
++list(range(5))
+
+# 2018-11-22 14:06:58.355204
++d 
+
+# 2018-11-22 14:07:03.508670
++d = {1:22}
+
+# 2018-11-22 14:07:03.934381
++d
+
+# 2018-11-22 14:11:02.857255
++f = d.copy
+
+# 2018-11-22 14:11:03.425823
++f
+
+# 2018-11-22 14:11:06.261303
++f = d.copy()
+
+# 2018-11-22 14:11:06.859078
++f
+
+# 2018-11-22 14:11:10.083446
++d
+
+# 2018-11-22 14:11:14.000217
++d[2]= 3
+
+# 2018-11-22 14:11:14.874271
++f
+
+# 2018-11-22 14:11:16.041007
++d
+
+# 2018-11-22 14:11:41.252741
++d = f
+
+# 2018-11-22 14:11:45.480813
++f[3] = 44
+
+# 2018-11-22 14:11:46.065452
++d
+
+# 2018-11-22 14:30:30.245024
++f = 1
+
+# 2018-11-22 14:30:37.320787
++ff = [0,2,3,5]
+
+# 2018-11-22 14:30:46.936267
++ff = [i + f for i in ff]
+
+# 2018-11-22 14:30:47.465654
++ff
+
+# 2018-11-22 14:47:55.035709
++[e] * n
+
+# 2018-11-22 14:48:00.279679
++[10] * 10
+
+# 2018-11-22 14:50:23.548779
++d
+
+# 2018-11-22 14:50:25.561339
++5 in d
+
+# 2018-11-22 15:08:58.608211
++[11234]*100000
+
+# 2018-11-22 15:30:18.902288
++d
+
+# 2018-11-22 15:30:22.247229
++d.get(4)
+
+# 2018-11-22 15:32:07.826168
++range(1, -12)
+
+# 2018-11-22 15:32:10.378948
++list(range(1, -12))
+
+# 2018-11-22 15:34:45.638091
++1 not in  [1, 3, 6, 4, 1, 2]
+
+# 2018-11-22 18:13:58.315740
++1e9
+
+# 2018-11-22 18:26:20.324640
++d
+
+# 2018-11-22 18:26:25.553720
++d =  [1, 3, 6, 4, 1, 2]
+
+# 2018-11-22 18:26:26.020106
++d
+
+# 2018-11-22 18:26:31.194026
++d[0:0]
+
+# 2018-11-22 18:26:33.960998
++d[0:1]
+
+# 2018-11-22 19:14:18.643732
++d.__len__()
+
+# 2018-11-22 19:14:21.209015
++d[6]
+
+# 2018-11-22 19:14:27.141108
++d[5]
+
+# 2018-11-22 19:14:44.535306
++d[:5]
+
+# 2018-11-22 19:14:46.149728
++d
+
+# 2018-11-22 19:14:50.015345
++d[:6]
+
+# 2018-11-22 19:14:56.484863
++d[5]
+
+# 2018-11-22 19:15:00.174651
++d[-1]
+
+# 2018-11-22 19:15:00.934709
++d
+
+# 2018-11-22 19:15:09.531975
++len(d)
+
+# 2018-11-22 19:15:11.748231
++d[6]
+
+# 2018-11-22 19:16:40.410681
++index(d)
+
+# 2018-11-22 19:16:46.667240
++index
+
+# 2018-11-22 19:16:55.791449
++d.items
+
+# 2018-11-22 19:16:58.257647
++dir(d)
+
+# 2018-11-22 19:17:07.802712
++d.count()
+
+# 2018-11-22 19:17:12.357481
++count
+
+# 2018-11-22 19:17:14.533082
++index
+
+# 2018-11-22 19:30:25.886961
++d
+
+# 2018-11-22 19:30:28.806217
++d[0:1]
+
+# 2018-11-22 19:30:40.637329
++d[0:0+2]
+
+# 2018-11-22 19:32:00.308960
++d = [4, 2, 2, 5, 1, 5, 8]
+
+# 2018-11-22 19:32:23.138257
++sum(d[0:2])/len(d)
+
+# 2018-11-22 19:44:56.519455
++d
+
+# 2018-11-22 19:44:59.546661
++d[6]
+
+# 2018-11-22 19:45:02.323738
++d[7]
+
+# 2018-11-22 19:45:04.464080
++d[:7]
+
+# 2018-11-22 19:45:06.157950
++d[:9]
+
+# 2018-11-22 20:06:00.009324
++-3 + -5
+
+# 2018-11-22 20:06:08.279066
++-3 - 5
+
+# 2018-11-22 20:06:22.710211
++(-5 -8 -4)/3
+
+# 2018-11-22 20:06:41.616884
++sum([-5, -8, -4])
+
+# 2018-11-22 20:06:45.141662
++-17/3
+
+# 2018-11-22 20:09:26.632229
++len(d[0: 3])
+
+# 2018-11-22 20:09:32.880994
++len(d[0: 2])
+
+# 2018-11-22 20:37:31.609189
++11-6
+
+# 2018-11-22 20:37:34.537219
++5//2
+
+# 2018-11-22 20:37:50.977976
++12/6
+
+# 2018-11-22 20:37:55.021617
++12-6
+
+# 2018-11-22 20:37:57.123593
++6//2
+
+# 2018-11-22 20:38:12.044096
++12-6
+
+# 2018-11-22 20:38:13.606766
++6//3
+
+# 2018-11-22 20:38:34.024909
++13-6
+
+# 2018-11-22 20:38:35.761512
++7//3
+
+# 2018-11-22 20:38:48.604148
++12-6
+
+# 2018-11-22 20:38:50.886655
++6+7
+
+# 2018-11-22 20:38:53.119532
++13//3
+
+# 2018-11-22 20:39:07.267679
++11-6
+
+# 2018-11-22 20:39:09.273815
++5//3
+
+# 2018-11-22 20:39:15.671608
++6//3
+
+# 2018-11-22 20:39:22.857777
++12-6
+
+# 2018-11-22 20:39:28.043456
++6+1//3
+
+# 2018-11-22 20:39:30.995023
++6+3//3
+
+# 2018-11-22 20:39:37.398334
++9//3
+
+# 2018-11-22 20:39:41.227396
++11-6
+
+# 2018-11-22 20:39:45.932331
++8//3
+
+# 2018-11-22 20:39:54.953665
++9//3
+
+# 2018-11-22 20:39:59.000008
++9//2
+
+# 2018-11-22 20:40:07.962911
++11
+
+# 2018-11-22 20:40:13.347235
++11-6
+
+# 2018-11-22 20:40:15.451209
++5+2
+
+# 2018-11-22 20:40:17.131987
++7//2
+
+# 2018-11-22 20:41:03.743824
++12-5
+
+# 2018-11-22 20:41:07.157386
++11//4
+
+# 2018-11-22 20:41:20.631804
++1-3
+
+# 2018-11-22 20:41:26.829071
++6//4
+
+# 2018-11-22 20:41:39.483267
++1-3
+
+# 2018-11-22 20:41:42.956848
++-2+4
+
+# 2018-11-22 20:41:44.857051
++2//4
+
+# 2018-11-22 20:42:52.774420
++1-0
+
+# 2018-11-22 20:42:57.585946
++1//1
+
+# 2018-11-22 20:43:00.922169
++1//11
+
+# 2018-11-22 20:43:06.467347
++12//1
+
+# 2018-11-22 20:43:08.642124
++12//11
+
+# 2018-11-22 20:44:41.413723
++11*10
+
+# 2018-11-22 20:44:51.561798
++109-110
+
+# 2018-11-22 20:45:06.474305
++110-110
+
+# 2018-11-22 20:45:10.050022
++11//11
+
+# 2018-11-22 20:46:22.748174
++1-0
+
+# 2018-11-22 20:46:25.705538
++1 < 11
+
+# 2018-11-22 20:47:20.231904
++0//11
+
+# 2018-11-22 20:47:23.920364
++0/11
+
+# 2018-11-22 20:52:00.437013
++110-100
+
+# 2018-11-22 20:52:02.686646
++10//11
+
+# 2018-11-22 20:52:07.763246
++21//11
+
+# 2018-11-22 20:52:15.576211
++111-100
+
+# 2018-11-22 20:52:17.706066
++11//11
+
+# 2018-11-22 20:53:24.188624
++1-0
+
+# 2018-11-22 20:53:27.511559
++2//11
+
+# 2018-11-22 20:54:22.458190
++def solution(a, b, k):
++    return (b-a+1)//k
+
+# 2018-11-22 20:54:28.085529
++solution(0,1,11)
+
+# 2018-11-22 20:54:53.263807
++solution(10,10,5)
+
+# 2018-11-22 20:56:09.658774
++10//5
+
+# 2018-11-22 20:56:17.750020
++10-10
+
+# 2018-11-22 20:56:20.105427
++5//5
+
+# 2018-11-22 20:57:09.049180
++10  % 7
+
+# 2018-11-22 20:57:55.133423
++1//11
+
+# 2018-11-22 20:58:15.485422
++111//11
+
+# 2018-11-22 20:58:21.855922
++100//11
+
+# 2018-11-22 20:58:24.469918
++10-9
+
+# 2018-11-22 20:58:28.177486
++1//11
+
+# 2018-11-22 20:58:36.708727
++0//11
+
+# 2018-11-22 20:59:41.267914
++11 - 6
+
+# 2018-11-22 20:59:43.328705
++5// 2
+
+# 2018-11-22 20:59:49.925935
++11- 6
+
+# 2018-11-22 20:59:53.566765
++5+11
+
+# 2018-11-22 20:59:55.486799
++16//11
+
+# 2018-11-22 21:00:10.283304
++11//11
+
+# 2018-11-22 21:00:22.236560
++0-0
+
+# 2018-11-22 21:00:27.868900
++0+11-1
+
+# 2018-11-22 21:00:30.326020
++10//11
+
+# 2018-11-22 21:02:58.596419
++100 % 11
+
+# 2018-11-22 21:03:07.685046
++99% 11
+
+# 2018-11-22 21:03:14.519083
++100 % 11
+
+# 2018-11-22 21:03:18.737648
++110 % 11
+
+# 2018-11-22 21:03:37.910352
++109 % 11
+
+# 2018-11-22 21:03:51.857346
++0 % 11
+
+# 2018-11-22 21:03:58.301056
++1 % 11
+
+# 2018-11-22 21:09:58.135644
++100-99
+
+# 2018-11-22 21:10:08.523678
++98-96
+
+# 2018-11-22 21:10:42.292421
++98 % 11
+
+# 2018-11-22 21:10:45.284916
++96 % 11
+
+# 2018-11-22 21:10:55.026377
++99 % 11
+
+# 2018-11-22 21:10:58.390171
++100 % 11
+
+# 2018-11-22 21:11:48.668193
++200 % 11
+
+# 2018-11-22 21:11:59.898959
++200 / 11
+
+# 2018-11-22 21:12:06.211085
++200 // 11
+
+# 2018-11-22 21:12:12.011124
++99 // 11
+
+# 2018-11-22 21:12:18.149346
++98 // 11
+
+# 2018-11-22 21:12:23.230059
++96 // 11
+
+# 2018-11-22 21:12:33.441583
++0 // 11
+
+# 2018-11-22 21:12:43.482552
++1 // 11
+
+# 2018-11-22 21:12:51.494186
++0 / 11
+
+# 2018-11-22 21:13:01.639193
++0 % 11
+
+# 2018-11-22 21:13:34.207427
++96 / 11
+
+# 2018-11-22 21:13:38.027567
++96 // 11
+
+# 2018-11-22 21:13:47.111908
++98 // 11
+
+# 2018-11-22 21:13:50.029441
++98 / 11
+
+# 2018-11-22 21:13:53.906122
++99 / 11
+
+# 2018-11-22 21:13:59.931728
++99 // 11
+
+# 2018-11-22 21:14:23.344095
++int(98 / 11)
+
+# 2018-11-22 21:14:31.780759
++round(98 / 11)
+
+# 2018-11-22 21:21:34.537528
++99 % 11
+
+# 2018-11-22 21:21:45.099298
++99 / 11
+
+# 2018-11-22 21:21:48.725012
++96 / 11
+
+# 2018-11-22 21:21:51.125063
++98 / 11
+
+# 2018-11-22 21:22:15.155544
++round(98 / 11, 0)
+
+# 2018-11-22 21:22:32.258034
++round(98 / 11, -1)
+
+# 2018-11-22 21:22:34.772190
++round(98 / 11, -2)
+
+# 2018-11-22 21:22:37.124693
++round(98 / 11, -3)
+
+# 2018-11-22 21:22:39.654744
++round(98 / 11, 1)
+
+# 2018-11-22 21:23:06.973835
++(98/11) - (96/11)
+
+# 2018-11-22 21:23:11.125387
++(99/11) - (96/11)
+
+# 2018-11-22 21:23:20.824650
++(99//11) - (96//11)
+
+# 2018-11-22 21:23:24.413501
++(98//11) - (96//11)
+
+# 2018-11-22 21:23:31.290070
++(100//11) - (96//11)
+
+# 2018-11-22 21:23:38.402805
++(112//11) - (96//11)
+
+# 2018-11-22 21:23:42.699899
++0//11
+
+# 2018-11-22 21:24:02.387432
++9//11
+
+# 2018-11-22 21:24:14.036942
++(9//11) - (0//11)
+
+# 2018-11-22 21:24:33.683263
++(20//11) - (11//11)
+
+# 2018-11-22 21:24:36.538775
++11/11
+
+# 2018-11-22 21:24:39.798191
++11//11
+
+# 2018-11-22 21:24:43.376583
++20//11
+
+# 2018-11-22 21:24:55.386933
++11//11
+
+# 2018-11-22 21:24:58.594643
++20//11
+
+# 2018-11-22 21:25:24.450424
++20 - 11
+
+# 2018-11-22 21:25:32.895919
++9 //11
+
+# 2018-11-22 21:25:53.566625
++0//11
+
+# 2018-11-22 21:25:57.823683
++0  % 11
+
+# 2018-11-22 21:26:01.053508
++0/11
+
+# 2018-11-22 21:26:05.869565
++11//11
+
+# 2018-11-22 21:26:22.149118
++109-100
+
+# 2018-11-22 21:26:24.086923
++9//11
+
+# 2018-11-22 21:27:04.348978
++111//11
+
+# 2018-11-22 21:27:11.421735
++110//11
+
+# 2018-11-22 21:27:17.120183
++111 % 11
+
+# 2018-11-22 21:27:22.238856
++110 % 11
+
+# 2018-11-22 21:27:24.848385
++0 % 11
+
+# 2018-11-22 21:27:29.381321
++1 % 11
+
+# 2018-11-22 21:29:44.884428
++6 // 2
+
+# 2018-11-22 21:29:48.171082
++11 // 2
+
+# 2018-11-22 21:29:52.454796
++5 - 3
+
+# 2018-11-22 21:29:55.965408
++11 - 6
+
+# 2018-11-22 21:29:58.134397
++5 // 2
+
+# 2018-11-22 21:30:44.696735
++0 // 11
+
+# 2018-11-22 21:30:48.331487
++1 // 11
+
+# 2018-11-22 21:30:51.149030
++0 % 11
+
+# 2018-11-22 21:30:53.922044
++1 % 11
+
+# 2018-11-22 21:31:51.681707
++110 - 99
+
+# 2018-11-22 21:34:34.108264
++22/20
+
+# 2018-11-22 21:34:40.109939
++21 - 19
+
+# 2018-11-22 21:34:54.170262
++6 < 20 < 8
+
+# 2018-11-22 21:35:24.406194
++27 - 25
+
+# 2018-11-22 21:35:29.462276
++27 // 11
+
+# 2018-11-22 21:35:35.291656
++25 // 11
+
+# 2018-11-22 21:35:38.518353
++22//11
+
+# 2018-11-22 21:35:45.877876
++25 % 11
+
+# 2018-11-22 21:35:57.257718
++45 % 11
+
+# 2018-11-22 21:36:00.365575
++45 // 11
+
+# 2018-11-22 21:36:03.842762
++25 // 11
+
+# 2018-11-22 21:36:58.752470
++0 % 11
+
+# 2018-11-22 21:37:03.842992
++0 // 11
+
+# 2018-11-22 21:37:17.391349
++43 // 11
+
+# 2018-11-22 21:37:22.442952
++25 // 11
+
+# 2018-11-22 21:37:35.723084
++43 - 25
+
+# 2018-11-22 21:37:38.341321
++18 // 11
+
+# 2018-11-22 21:37:43.922581
++3 - 1
+
+# 2018-11-22 21:39:11.518442
++30 // 10
+
+# 2018-11-22 21:39:17.671435
++10 // 10
+
+# 2018-11-22 21:39:26.658539
++30 - 10
+
+# 2018-11-22 21:39:28.251954
++20 // 10
+
+# 2018-11-22 21:39:59.036019
++30/10
+
+# 2018-11-22 21:40:01.808518
++10/10
+
+# 2018-11-22 21:40:20.512727
++11/10
+
+# 2018-11-22 21:40:40.431964
++30//10
+
+# 2018-11-22 21:40:43.933975
++30/10
+
+# 2018-11-22 21:40:59.453475
++'3r0'
+
+# 2018-11-22 21:41:05.815381
++(3, 0)
+
+# 2018-11-22 21:41:10.072271
++(1, 0)
+
+# 2018-11-22 21:41:21.929922
++2
+
+# 2018-11-22 21:41:32.495289
++3/1
+
+# 2018-11-22 21:41:36.185837
++5/3
+
+# 2018-11-22 21:41:53.195241
++9/10
+
+# 2018-11-22 21:41:56.851346
++9//10
+
+# 2018-11-22 21:42:00.304150
++9/10
+
+# 2018-11-22 21:42:08.212118
++'0r1'
+
+# 2018-11-22 21:43:35.992901
++11//10
+
+# 2018-11-22 21:43:42.905602
++10//11
+
+# 2018-11-22 21:43:46.039096
++11//11
+
+# 2018-11-22 21:43:55.401799
++19//11
+
+# 2018-11-22 21:44:14.193869
++19-11
+
+# 2018-11-22 21:44:17.195829
++8+11
+
+# 2018-11-22 21:44:19.354530
++19//11
+
+# 2018-11-22 21:45:19.663905
++12-5
+
+# 2018-11-22 21:45:22.055464
++7+11
+
+# 2018-11-22 21:45:23.765276
++18//11
+
+# 2018-11-22 21:45:42.640995
++12-11
+
+# 2018-11-22 21:45:44.070858
++1+11
+
+# 2018-11-22 21:45:46.241894
++12//11
+
+# 2018-11-22 21:46:09.678920
++11-9
+
+# 2018-11-22 21:46:11.770013
++2+11
+
+# 2018-11-22 21:46:19.648028
++13//11
+
+# 2018-11-22 21:48:43.782207
++123e6
+
+# 2018-11-22 21:53:28.294553
++0/11
+
+# 2018-11-22 21:56:03.395450
++345/17
+
+# 2018-11-22 21:56:12.013696
++(345/17) - (11/17)
+
+# 2018-11-22 21:56:36.648786
++int(11/17)
+
+# 2018-11-22 21:56:50.223930
++int(345/17)
+
+# 2018-11-22 21:57:03.980201
++int(11/17)
+
+# 2018-11-22 21:57:24.151848
++int(11/17)//1
+
+# 2018-11-22 21:57:27.674519
++int(11/17)
+
+# 2018-11-22 21:57:43.100999
++11/17
+
+# 2018-11-22 21:57:47.204885
++(11/17)//1
+
+# 2018-11-23 21:57:39.873792
++20/8
+
+# 2018-11-24 08:29:29.682795
++ls
+
+# 2018-11-24 08:32:40.413147
++import math
+
+# 2018-11-24 08:32:42.884824
++dir(math)
+
+# 2018-11-24 08:33:01.873377
++help(math.remainder)
+
+# 2018-11-24 08:33:06.136469
++remainder(5, 2)
+
+# 2018-11-24 08:33:13.102426
++math.remainder(5, 2)
+
+# 2018-11-24 08:33:18.377759
++5 % 2
+
+# 2018-11-24 08:33:28.279977
++math.remainder(7, 2)
+
+# 2018-11-24 08:33:34.215414
++7 % 2
+
+# 2018-11-25 19:14:30.228487
++help(math.remainder)
+
+# 2018-11-25 19:30:33.048537
++sorted
+
+# 2018-11-25 19:30:36.317195
++sort
+
+# 2018-11-25 19:38:43.734875
++a = [10, 50, 5, 1]
+
+# 2018-11-25 19:38:46.340392
++a
+
+# 2018-11-25 19:38:52.070915
++a = sorted(a)
+
+# 2018-11-25 19:38:52.398806
++a
+
+# 2018-11-25 19:38:55.093392
++a[:-2]
+
+# 2018-11-25 19:39:22.779391
++[1,2,3][:-2]
+
+# 2018-11-25 19:43:20.051887
++a[-1]
+
+# 2018-11-25 19:44:34.231800
++25* 4
+
+# 2018-11-25 19:51:33.635143
++a
+
+# 2018-11-25 19:51:37.280479
++a[:2]
+
+# 2018-11-25 19:51:39.916344
++a[:3]
+
+# 2018-11-25 20:00:32.287796
++4*5*6
+
+# 2018-11-25 20:14:20.171849
++range(5, 0)
+
+# 2018-11-25 20:14:25.278276
++list(range(5, 0))
+
+# 2018-11-25 20:23:55.979615
++d
+
+# 2018-11-25 20:24:02.564007
++d = {2:3}
+
+# 2018-11-25 20:24:05.204936
++d.get(2)
+
+# 2018-11-25 20:26:14.039843
++d = {2,3}
+
+# 2018-11-25 20:26:14.756512
++d
+
+# 2018-11-25 20:26:20.649731
++dir(d)
+
+# 2018-11-25 20:26:28.737043
++d.remove(2)
+
+# 2018-11-25 20:26:29.411108
++d
+
+# 2018-11-25 20:30:25.069353
++isect = {}
+
+# 2018-11-25 20:30:33.967136
++isect.get(0-1)
+
+# 2018-11-25 20:30:43.525533
++isect[0-1] = 0
+
+# 2018-11-25 20:30:45.503555
++isect
+
+# 2018-11-25 20:30:54.333321
++isect[0-1] = set(0)
+
+# 2018-11-25 20:31:01.859295
++isect[0-1] = {0}
+
+# 2018-11-25 20:31:03.642620
++isect
+
+# 2018-11-25 20:48:22.209936
++~5
+
+# 2018-11-25 20:48:26.211689
++~5 + 1
+
+# 2018-11-25 20:48:58.241161
++dir(int)
+
+# 2018-11-25 20:49:07.915704
++real(int)
+
+# 2018-11-25 20:49:10.012899
++int.real
+
+# 2018-11-25 20:49:15.990856
++int.real(-50
++)
+
+# 2018-11-25 20:49:20.411863
++int.real()
+
+# 2018-11-25 20:49:26.301386
++int(-5).real()
+
+# 2018-11-25 20:49:31.861396
++int.real
+
+# 2018-11-25 20:49:39.474595
++help(int.real)
+
+# 2018-11-25 20:50:57.130668
++d
+
+# 2018-11-25 20:51:01.896928
++d.add('point')
+
+# 2018-11-25 20:51:02.896764
++d
+
+# 2018-11-25 20:51:47.611758
++for s in d:
++    if s == 'point':
++        print('ss')
+
+# 2018-11-25 20:59:43.116628
++f
+
+# 2018-11-25 20:59:44.980278
++f = []
+
+# 2018-11-25 20:59:49.862052
++f = [0,1,2]
+
+# 2018-11-25 20:59:57.343840
++f.insert(0, 'point')
+
+# 2018-11-25 20:59:57.779174
++d
+
+# 2018-11-25 20:59:58.493537
++f
+
+# 2018-11-25 21:03:09.776931
++f.count('point')
+
+# 2018-11-25 21:27:17.728033
++f
+
+# 2018-11-25 21:27:24.965724
++f.insert(-1, 'pint')
+
+# 2018-11-25 21:27:25.537149
++f
+
+# 2018-11-27 01:03:35.575212
++d
+
+# 2018-11-27 01:03:43.172040
++def d():
++    return 2
+
+# 2018-11-27 01:03:47.249719
++type(d)
+
+# 2018-11-27 01:04:04.978415
++a = lambda: 2
+
+# 2018-11-27 01:04:08.234077
++type(a)
+
+# 2018-11-27 01:04:13.678880
++dir(a)
+
+# 2018-11-27 19:58:32.116691
++ls
+
+# 2018-11-30 22:38:37.836671
++s
+
+# 2018-11-30 22:38:45.096896
++s /= 2
+
+# 2018-11-30 22:38:46.211096
++s
+
+# 2018-12-01 06:43:24.467178
++L = 0
+
+# 2018-12-01 06:43:25.443666
++R
+
+# 2018-12-01 06:43:27.165723
++R = 1
+
+# 2018-12-01 06:43:59.453166
++def cmdL():
++    L = 2*L-R
+
+# 2018-12-01 06:44:13.259966
++def cmdR():
++    R = 2*R-L
+
+# 2018-12-01 06:44:20.484050
++def cmdL():
++    L = 2*L-R
++    print(L)
+
+# 2018-12-01 06:44:28.058118
++def cmdR():
++    R = 2*R-L
++    print(R)
+
+# 2018-12-01 06:44:56.267229
++def reset():
++    L, R = 0, 1
+
+# 2018-12-01 06:45:06.008398
++cmdR()
+
+# 2018-12-01 06:45:13.592261
++R
+
+# 2018-12-01 06:45:15.334404
++L
+
+# 2018-12-01 06:45:49.406275
++def cmdR(R):
++    R = 2*R-L
++    print(R)
+
+# 2018-12-01 06:45:52.476673
++cmdR(R)
+
+# 2018-12-01 06:53:17.315533
++def cmdR():
++    global R
++    R = 2*R-L
++    print(R)
+
+# 2018-12-01 06:53:31.081407
++def cmdL():
++    global L
++    L = 2*L-R
++    print(L)
+
+# 2018-12-01 06:53:46.860359
++def reset():
++    global L
++    global R
++    L, R = 0, 1
+
+# 2018-12-01 06:54:26.216834
++cmdL()
+
+# 2018-12-01 06:54:34.276980
++cmdR()
+
+# 2018-12-01 06:54:41.071643
++cmdL()
+
+# 2018-12-01 06:54:54.934541
++R
+
+# 2018-12-01 06:55:10.692100
++reset()
+
+# 2018-12-01 07:14:13.117797
++5+7
+
+# 2018-12-01 07:14:18.779462
++12%10
+
+# 2018-12-01 07:14:32.314436
++zip('100', '90')
+
+# 2018-12-01 07:14:35.474405
++list(zip('100', '90'))
+
+# 2018-12-01 07:14:43.322206
++list(*zip('100', '90'))
+
+# 2018-12-01 07:14:46.880071
++list(zip('100', '90'))
+
+# 2018-12-01 07:15:07.870285
++len('90')
+
+# 2018-12-01 07:15:16.137290
++'112'
+
+# 2018-12-01 07:16:07.143933
++'112'[::-1]
+
+# 2018-12-01 07:16:14.054892
++'112'[::-1][:2]
+
+# 2018-12-01 07:16:31.012397
++'112'[-2]
+
+# 2018-12-01 07:16:37.597325
++'112'[-2:]
+
+# 2018-12-01 07:16:48.907379
++'90'[-2:]
+
+# 2018-12-01 07:17:49.265448
++'90'[:-2]
+
+# 2018-12-01 07:18:41.660847
++zip('12', '90')
+
+# 2018-12-01 07:18:47.001569
++list(zip('12', '90'))
+
+# 2018-12-01 07:19:37.981922
++5 % 10
+
+# 2018-12-01 07:19:44.289599
++15 % 10
+
+# 2018-12-01 07:19:47.032866
++15 //10
+
+# 2018-12-01 07:19:52.002466
++5 //10
+
+# 2018-12-01 07:20:47.427842
++10 //5
+
+# 2018-12-01 07:22:44.200386
++9 + 3
+
+# 2018-12-01 07:22:48.560752
++12 % 10
+
+# 2018-12-01 07:43:03.421481
++'9' + '10'
+
+# 2018-12-01 07:55:12.516036
++65//55
+
+# 2018-12-01 07:55:20.576025
++65 - 55
+
+# 2018-12-01 07:55:36.043750
++65_0
+
+# 2018-12-01 07:55:44.289292
++65_000_000
+
+# 2018-12-01 15:36:30.865521
++bin(65)
+
+# 2018-12-01 15:40:30.373966
++coalesce
+
+# 2018-12-01 15:40:42.130086
++'' or 2
+
+# 2018-12-01 15:40:46.711734
++2 or ''
+
+# 2018-12-01 15:40:50.587110
++'iowa' or ''
+
+# 2018-12-01 15:40:53.826445
++'' or 'iowa'
+
+# 2018-12-01 15:46:40.586067
++12%10
+
+# 2018-12-01 15:51:23.708097
++'45'[-2:]
+
+# 2018-12-01 15:51:26.971698
++'145'[-2:]
+
+# 2018-12-01 15:51:32.761111
++'145'[:-2]
+
+# 2018-12-01 15:53:07.335399
++145//65
+
+# 2018-12-01 15:53:12.040670
++145-65
+
+# 2018-12-01 15:53:21.217649
++145 % 65
+
+# 2018-12-01 15:54:37.292316
++65 % 10
+
+# 2018-12-01 15:54:41.009790
++145 % 10
+
+# 2018-12-01 15:54:45.880232
++145 % 100
+
+# 2018-12-01 15:54:57.629048
++145 % 1000
+
+# 2018-12-01 15:57:35.443259
++map(int, str(14))
+
+# 2018-12-01 15:57:36.885978
++map(int, str(14))()
+
+# 2018-12-01 15:57:40.294139
++list(map(int, str(14)))
+
+# 2018-12-01 15:58:15.007796
++sum(map(int, str(145)))
+
+# 2018-12-01 15:58:36.943292
++10 + 10
+
+# 2018-12-01 15:58:47.853981
++20 - 20
+
+# 2018-12-01 15:58:49.612771
++0/9
+
+# 2018-12-01 15:58:58.986781
++def numberOfCarryOperations(a, b):
++    # f is the digitSum function
++    f=lambda n:sum(map(int,str(n)));return(f(a)+f(b)-f(a+b))/9
+
+# 2018-12-01 15:59:06.402398
++numberOfCarryOperations(145, 55)
+
+# 2018-12-01 15:59:28.729228
++145+55
+
+# 2018-12-01 15:59:36.425194
++20-2
+
+# 2018-12-01 15:59:38.174294
++18/9
